@@ -9,12 +9,12 @@ export default function Pricing() {
     <section className="border-t overflow-hidden border-gray-700/50">
       <BorderedSection className="!px-0 md:!px-0">
         {/* header */}
-        <div className="flex flex-col items-center border-b border-gray-700/50 px-5 pt-20 pb-10 text-center md:px-10">
+        <div className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center">
           <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[-0.03em] text-muted-foreground">
             Pricing
           </span>
 
-          <h2 className="font-gambetta max-w-2xl text-[4.5rem] text-4xl font-medium leading-[1.25] tracking-[-0.03em] text-white ">
+          <h2 className="section-heading-1 max-w-2xl leading-[1.25]">
             Nee<em className="font-normal">d</em> o
             <em className="font-normal">n</em>e te
             <em className="font-normal">m</em>pl
@@ -31,15 +31,15 @@ export default function Pricing() {
         </div>
 
         {/* plans */}
-        <div className="relative grid overflow-hidden md:grid-cols-2 md:divide-x md:divide-gray-700/50">
+        <div className="relative grid overflow-hidden lg:grid-cols-2 lg:divide-x lg:divide-gray-700/50">
           {PRICING_PLANS.map((plan) => (
             <div
               key={plan.name}
               className="relative overflow-hidden flex flex-col  p-5 "
             >
               {plan.highlighted && (
-                <div className="pointer-events-none absolute inset-0 -z-10 -bottom-250 -right-50 overflow-hidden">
-                  <div className="absolute inset-0 rotate-160">
+                <div className="pointer-events-none absolute inset-0 -z-10 -bottom-32 sm:-bottom-64 lg:-bottom-250 -right-10 sm:-right-32 lg:-right-50 overflow-hidden">
+                  <div className="absolute inset-0 rotate-160 w-[200%] sm:w-[150%] lg:w-full h-[200%] sm:h-[150%] lg:h-full">
                     <Image
                       src="/images/gradient.avif"
                       alt=""
@@ -56,11 +56,11 @@ export default function Pricing() {
               </span>
 
               <div className="mt-8 flex items-baseline justify-between gap-4">
-                <h3 className="font-gambetta text-3xl font-medium text-white tracking-[-0.03rem] md:text-[2.75rem]">
+                <h3 className="font-gambetta font-medium text-white tracking-[-0.03rem] text-[2rem] lg:text-[2.25rem] xl:text-[2.75rem]">
                   {plan.name}
                 </h3>
 
-                <div className="flex items-baseline gap-4 whitespace-nowrap  font-gambetta md:text-[2.75rem]">
+                <div className="flex items-baseline gap-4 whitespace-nowrap font-gambetta text-[2rem] lg:text-[2.25rem] xl:text-[2.75rem]">
                   <span className=" font-medium text-white">{plan.price}</span>
                   {plan.originalPrice && (
                     <span className="text-muted-foreground/70 font-medium line-through">
@@ -85,7 +85,7 @@ export default function Pricing() {
                     return (
                       <li
                         key={feature.label}
-                        className="flex items-center gap-3 text-base text-white"
+                        className="flex items-center gap-3 text-sm lg:text-base text-white"
                       >
                         <Icon className="size-6 shrink-0 text-white" />
                         {feature.label}

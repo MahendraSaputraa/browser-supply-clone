@@ -12,10 +12,10 @@ export const FOUNDER_STATS = [
 export default function Founder() {
   return (
     <section className="border-t border-gray-700/50">
-      <BorderedSection className="!px-0 md:!px-0">
-        <div className="grid md:grid-cols-2 md:divide-x md:divide-gray-700/50">
+      <BorderedSection className="px-0!">
+        <div className="grid lg:grid-cols-2 lg:divide-x lg:divide-gray-700/50">
           {/* left: photo/video, full-bleed */}
-          <div className="relative min-h-[400px] md:min-h-[888px]">
+          <div className="relative min-h-[298px] lg:min-h-[888px]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
@@ -30,12 +30,12 @@ export default function Founder() {
           {/* right: content */}
           <div className="flex flex-col">
             {/* bio */}
-            <div className="border-b border-gray-700/50 px-5 pb-9 pt-20 md:px-10 md:pr-0 pr-0">
+            <div className="section-header-spacing border-b border-gray-700/50 pb-9 pr-0 lg:pr-0">
               <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[-0.03em] text-muted-foreground">
                 Founder
               </span>
 
-              <h2 className="font-gambetta  text-[3.5rem] font-medium leading-[1.15] tracking-[-0.03em] text-white ">
+              <h2 className="section-heading-2 font-medium leading-[1.15]">
                 Hey, I&apos;m Ramish
                 <br />
                 Designer &amp; Creator
@@ -74,7 +74,7 @@ export default function Founder() {
                       : "flex flex-col items-center justify-center gap-2 px-5 py-10 text-center"
                   }
                 >
-                  <span className="font-gambetta text-3xl font-medium text-white md:text-[2.7rem]">
+                  <span className="font-gambetta lg:text-[2.25rem] text-[2rem] font-medium text-white xl:text-[2.75rem]">
                     {stat.value}
                   </span>
                   <span className="paragraph">{stat.label}</span>

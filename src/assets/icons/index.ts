@@ -11,6 +11,7 @@ import MailIcon from "./mail-icon.svg";
 import RefreshIcon from "./refresh-icon.svg";
 import VideoIcon from "./video-icon.svg";
 import TrendUpIcon from "./trend-up-icon.svg";
+import CloseIcon from "./close-icon.svg";
 
 export {
   MenuIcon,
@@ -26,4 +27,5 @@ export {
   RefreshIcon,
   VideoIcon,
   TrendUpIcon,
+  CloseIcon,
 };

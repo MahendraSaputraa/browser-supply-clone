@@ -11,9 +11,9 @@ export default function Footer() {
     <footer className="border-t border-gray-700/50">
       <BorderedSection className="!px-0">
         {/* main */}
-        <div className="md:px-10 px-5 flex flex-col justify-between gap-12 py-10 md:flex-row md:gap-6">
+        <div className="lg:px-10 px-5 flex flex-col justify-between py-10 lg:flex-row gap-8">
           {/* left: brand */}
-          <div className="max-w-xs">
+          <div className="lg:text-start text-center">
             <span className="font-gambetta text-[1.75rem] font-medium text-white">
               Browser.supply
             </span>
@@ -21,7 +21,7 @@ export default function Footer() {
               Launch your online business with a <br /> premium Framer website
               template.
             </p>
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-6 flex lg:justify-start justify-center items-center gap-4">
               {SOCIAL_LINKS.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
 
           {/* right: link columns */}
-          <div className="flex gap-16 sm:gap-14">
+          <div className="flex lg:flex-row flex-col lg:justify-start justify-center lg:text-start text-center gap-16 sm:gap-14">
             {FOOTER_LINK_COLUMNS.map((column, i) => (
               <ul key={i} className="flex flex-col gap-6">
                 {column.map((link) => (
@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
 
         {/* bottom bar */}
-        <div className="flex md:px-10 px-5 flex-col items-center justify-between gap-4 border-t border-gray-700/50 py-5 paragraph sm:flex-row">
+        <div className="flex lg:px-10 px-5 flex-col items-center justify-between gap-4 border-t border-gray-700/50 py-5 paragraph lg:flex-row">
           <p>
             © {new Date().getFullYear()} browser.supply.{" "}
             <span className=" text-white">Framer</span> website templates

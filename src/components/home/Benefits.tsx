@@ -11,12 +11,12 @@ export default function Benefits() {
     <section className="relative z-10">
       <BorderedSection className="!px-0 md:!px-0">
         {/* header */}
-        <div className="flex flex-col items-center border-b border-gray-700/50 px-5 pb-10 pt-20 text-center md:px-10">
+        <div className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center">
           <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[-0.03em] text-muted-foreground">
             Benefits
           </span>
 
-          <h2 className="font-gambetta max-w-3xl md:text-[4.5rem] font-medium leading-[1.05] tracking-[-0.03em] text-white ">
+          <h2 className="section-heading-1 max-w-3xl">
             P<em>r</em>ofess<em>i</em>o<em>n</em>al we<em>b</em>si<em>t</em>e
             <br />l<em>i</em>ve be<em>f</em>o<em>r</em>e t<em>h</em>e w
             <em>ee</em>ke
@@ -29,7 +29,7 @@ export default function Benefits() {
           </p>
         </div>
 
-        <div className="grid divide-y divide-gray-700/50 md:grid-cols-3 md:divide-x md:divide-y-0">
+        <div className="grid divide-y divide-gray-700/50 grid-cols-1 lg:grid-cols-3 md:divide-x md:divide-y-0">
           {/* left*/}
           <div className="flex flex-col">
             <div className="p-5 pb-9">

@@ -82,22 +82,23 @@ export default function Testimonials() {
     <section className="relative overflow-hidden border-t border-gray-700/50 bg-black">
       {/* gradient background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-[5%] top-50 w-[85vh] -rotate-140  h-[85vw]  ">
+        <div className="absolute left-[-50%] sm:left-[-40%] md:left-[-30%] lg:left-[-10%] xl:left-[5%] top-[80px] sm:top-[100px] md:top-[120px] lg:top-50 w-[150vw] sm:w-[120vw] md:w-[85vh] lg:w-[85vh] -rotate-140 h-[150vw] sm:h-[120vw] md:h-[85vw] lg:h-[85vw]">
           <Image
             src="/images/gradient.avif"
             alt=""
             fill
             priority
             sizes="100vh"
-            className="select-none object-cover opacity-90 scale-150  blur-3xl"
+            className="select-none object-cover opacity-90 scale-100 sm:scale-125 lg:scale-150 blur-3xl"
           />
         </div>
       </div>
-      <BorderedSection className="!px-0 md:!px-0 relative">
+
+      <BorderedSection className="px-0! relative">
         {/* header */}
-        <div className="flex flex-col gap-10 px-5 pt-20 pb-10 md:flex-row md:items-end md:justify-between md:px-10">
+        <div className="section-header-spacing flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <h2 className="font-gambetta  text-[3.5rem] font-medium leading-[1.15] tracking-[-0.03em] text-white">
+            <h2 className="section-heading-2 font-medium leading-[1.15]">
               Tr<em className="font-normal">u</em>ste
               <em className="font-normal">d</em> b
               <em className="font-normal">y</em> 2

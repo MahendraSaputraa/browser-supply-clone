@@ -14,14 +14,14 @@ export default function Hero() {
     <section className="relative">
       {/* gradient background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/2 top-[20%] w-[85vh] h-[85vw] -translate-x-1/2 -translate-y-1/2 rotate-[-90deg]">
+        <div className="absolute left-1/2 top-[20%] -translate-x-1/2 -translate-y-1/2 rotate-[-90deg] w-[120vmax] h-[120vmax] sm:w-[85vh] sm:h-[85vw] md:w-[85vh] md:h-[85vw] lg:w-[85vh] lg:h-[85vw]">
           <Image
             src="/images/gradient.avif"
             alt=""
             fill
             priority
             sizes="100vh"
-            className="select-none object-cover opacity-90 blur-3xl scale-125"
+            className="select-none object-cover opacity-90 blur-3xl scale-100 sm:scale-125"
           />
         </div>
       </div>
@@ -80,22 +80,36 @@ export default function Hero() {
       </div>
       {/* stats section */}
       <div className="border-y border-gray-700/50">
-        <BorderedSection border="border-gray-700/50" className="px-0">
-          <div className="grid grid-cols-2 md:grid-cols-3">
+        <BorderedSection border="border-gray-700/50" className="px-0!">
+          <div className="grid grid-cols-2 lg:grid-cols-3">
             {stats.map((item, index) => (
               <div
                 key={item.label}
                 className={[
                   "flex min-h-32 flex-col items-center justify-center py-10 text-center",
-                  index == stats.length - 1 &&
-                    "col-span-2 sm:col-span-1 border-gray-700/50 border-t sm:border-t-0",
-                  index == 0 && " border-gray-700/50 border-r sm:border-r-0",
+                  "flex min-h-32 flex-col items-center justify-center py-10 text-center",
+
+                  // order
+                  index === 0 && "order-1",
+                  index === 1 && "order-3",
+                  index === 2 && "order-2",
+
+                  // span
+                  index === 1 && "col-span-2 lg:col-span-1",
+
+                  // reset order di desktop
+                  index === 0 && "lg:order-1",
+                  index === 1 && "lg:order-2",
+                  index === 2 && "lg:order-3",
+                  index === 1 &&
+                    "col-span-2 lg:col-span-1 border-gray-700/50 border-t lg:border-t-0",
+                  index == 0 && " border-gray-700/50 border-r lg:border-r-0",
                   index > 0
-                    ? " border-gray-700/50 md:border-l md:border-t-0"
+                    ? " border-gray-700/50 lg:border-l lg:border-t-0"
                     : "",
                 ].join(" ")}
               >
-                <div className="font-gambetta text-4xl font-medium leading-none text-white md:text-[44px]">
+                <div className="font-gambetta text-4xl font-medium leading-none text-white lg:text-[44px]">
                   {item.value}
                 </div>
                 <div className="mt-4 text-base font-normal text-muted-foreground tracking-[-0.04em]">

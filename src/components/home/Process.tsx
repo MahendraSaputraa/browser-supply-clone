@@ -7,12 +7,12 @@ export default function Process() {
     <section className="border-t border-gray-700/50">
       <BorderedSection className="!px-0 md:!px-0">
         {/* header */}
-        <div className="flex flex-col items-center border-b border-gray-700/50 px-5 pt-20 pb-10 text-center md:px-10">
+        <div className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center">
           <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[-0.03em] text-muted-foreground">
             Process
           </span>
 
-          <h2 className="font-gambetta max-w-2xl text-[4.5rem] text-4xl font-medium leading-[1.25] tracking-[-0.03em] text-white ">
+          <h2 className="section-heading-1 max-w-2xl leading-[1.25]">
             Go li<em className="font-normal">v</em>e i
             <em className="font-normal">n</em> ho
             <em className="font-normal">u</em>rs, <br /> not{" "}
@@ -28,9 +28,12 @@ export default function Process() {
         </div>
 
         {/* steps */}
-        <div className="grid divide-y divide-gray-700/50 md:grid-cols-3 md:divide-x md:divide-y-0">
+        <div className="grid divide-y divide-gray-700/50 lg:grid-cols-3 md:divide-x md:divide-y-0">
           {PROCESS_STEPS.map((step, index) => (
-            <div key={step.step} className="relative min-h-[420px]">
+            <div
+              key={step.step}
+              className="relative min-h-[280px] xl:min-h-[420px]"
+            >
               {index != 0 && (
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
