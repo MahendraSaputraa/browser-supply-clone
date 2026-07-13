@@ -86,7 +86,7 @@ export default function Hero() {
               <div
                 key={item.label}
                 className={[
-                  "flex min-h-32 flex-col items-center justify-center px-6 py-8 text-center",
+                  "flex min-h-32 flex-col items-center justify-center py-10 text-center",
                   index == stats.length - 1 &&
                     "col-span-2 sm:col-span-1 border-gray-700/50 border-t sm:border-t-0",
                   index == 0 && " border-gray-700/50 border-r sm:border-r-0",
@@ -95,10 +95,10 @@ export default function Hero() {
                     : "",
                 ].join(" ")}
               >
-                <div className="font-gambetta text-4xl font-semibold leading-none text-white md:text-5xl">
+                <div className="font-gambetta text-4xl font-medium leading-none text-white md:text-[44px]">
                   {item.value}
                 </div>
-                <div className="mt-4 text-xs font-medium text-white/45">
+                <div className="mt-4 text-base font-normal text-muted-foreground tracking-[-0.04em]">
                   {item.label}
                 </div>
               </div>

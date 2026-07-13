@@ -52,7 +52,7 @@ export const FEATURED_TEMPLATES = [
     name: "Selene",
     category: "AI SaaS",
     price: "$129 USD",
-    image: "/images/templates/selene.png",
+    image: "/images/image-mockup-8.avif",
     isNew: true,
   },
   {
@@ -60,7 +60,7 @@ export const FEATURED_TEMPLATES = [
     name: "Zenna",
     category: "Yoga studio",
     price: "$129 USD",
-    image: "/images/templates/zenna.png",
+    image: "/images/image-mockup-7.avif",
     isNew: false,
   },
   {
@@ -68,7 +68,7 @@ export const FEATURED_TEMPLATES = [
     name: "Traction",
     category: "SMMA",
     price: "$129 USD",
-    image: "/images/templates/traction.png",
+    image: "/images/image-mockup-3.avif",
     isNew: false,
   },
 ];

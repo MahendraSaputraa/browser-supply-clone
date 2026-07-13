@@ -72,7 +72,7 @@ export default function Navbar({ className }: NavbarProps) {
             className="h-4.5 w-4.5"
           />
 
-          <span className="text-base font-bold  ">Browser.supply</span>
+          <span className="text-base font-semibold  ">Browser.supply</span>
         </Link>
 
         {/* Navigation */}

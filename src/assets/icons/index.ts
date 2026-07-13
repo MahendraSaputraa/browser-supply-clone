@@ -10,6 +10,7 @@ import GlobeIcon from "./globe-icon.svg";
 import MailIcon from "./mail-icon.svg";
 import RefreshIcon from "./refresh-icon.svg";
 import VideoIcon from "./video-icon.svg";
+import TrendUpIcon from "./trend-up-icon.svg";
 
 export {
   MenuIcon,
@@ -24,4 +25,5 @@ export {
   MailIcon,
   RefreshIcon,
   VideoIcon,
+  TrendUpIcon,
 };

@@ -46,10 +46,15 @@
   /* Fonts */
   --font-inter: var(--font-inter);
   --font-gambetta: var(--font-gambetta);
+
+ 
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter);
+}
+.paragraph{
+  @apply tracking-[-0.03rem] text-base leading-6 text-muted-foreground;
 }

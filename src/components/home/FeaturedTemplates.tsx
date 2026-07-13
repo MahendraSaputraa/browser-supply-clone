@@ -5,23 +5,26 @@ import { FEATURED_TEMPLATES } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import BorderedSection from "@/components/layout/BorderedSection";
 import { ArrowRightIcon } from "@/assets/icons";
+import { cn } from "@/lib/utils";
 
 export default function FeaturedTemplates() {
   return (
     <section className="border-b border-gray-700/50">
-      <BorderedSection className="!px-0 ">
+      <BorderedSection className="px-0!">
         {/* header */}
-        <div className="flex px-5 md:px-10 flex-col justify-between gap-8 py-16 md:flex-row md:items-end">
+        <div className="flex px-5 md:px-10 flex-col justify-between gap-8 pt-16 pb-10 md:flex-row md:items-end">
           <div>
-            <h2 className="font-gambetta max-w-xl text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-white md:text-5xl">
-              <em className="font-normal">Pre</em>mium templates{" "}
-              <em className="font-normal">b</em>uilt to dr
-              <em className="font-normal">i</em>ve{" "}
-              <em className="font-normal">re</em>sul
+            <h2 className="font-gambetta max-w-xl text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-white md:text-[3.5rem]">
+              Pre
+              <em className="font-normal">m</em>ium tem
+              <em className="font-normal">p</em>lates <br />b
+              <em className="font-normal">u</em>ilt to dri
+              <em className="font-normal">v</em>e{" "}
+              <em className="font-normal">r</em>esul
               <em className="font-normal">t</em>s
             </h2>
 
-            <p className="mt-6 max-w-md text-sm leading-6 text-muted-foreground">
+            <p className="mt-6 max-w-md text-base font-normal tracking-[-0.03rem] leading-6 text-muted-foreground">
               Pick a template, swap in your content, and go live. Your business
               website can be up and running this afternoon.
             </p>
@@ -34,12 +37,16 @@ export default function FeaturedTemplates() {
         </div>
 
         {/* grid */}
-        <div className="grid px-5 md:px-10 gap-x-6 gap-y-12 border-t border-gray-700/50 py-16 md:grid-cols-3">
-          {FEATURED_TEMPLATES.map((template) => (
+        <div className="grid  gap-y-12 border-t border-gray-700/50  md:grid-cols-3">
+          {FEATURED_TEMPLATES.map((template, i) => (
             <Link
               key={template.slug}
               href={`/templates/${template.slug}`}
-              className="group block"
+              className={cn(
+                "group block p-10",
+                "hover:bg-border/50 transition-all",
+                i == 1 && "border-r border-l border-gray-700/50",
+              )}
             >
               <div className="overflow-hidden rounded-sm border border-gray-700/50">
                 <Image
@@ -52,19 +59,19 @@ export default function FeaturedTemplates() {
               </div>
 
               <div className="mt-5 flex items-center gap-2">
-                <h3 className="font-gambetta text-xl font-medium text-white">
+                <h3 className="font-gambetta text-[1.75rem] tracking-[-0.03rem] font-medium text-white">
                   {template.name}
                 </h3>
                 {template.isNew && (
-                  <span className="rounded-sm bg-emerald-500/15 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-emerald-400">
+                  <span className="rounded-sm bg-emerald-500/15 px-2 py-1.5 text-xs font-semibold uppercase text-emerald-500">
                     New
                   </span>
                 )}
               </div>
 
-              <div className="mt-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-white/45">
+              <div className="mt-2 flex items-center gap-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
                 <span>{template.category}</span>
-                <span className="size-1 rounded-full bg-white/30" />
+                <span className="size-1 rounded-full bg-muted-foreground" />
                 <span>{template.price}</span>
               </div>
             </Link>
