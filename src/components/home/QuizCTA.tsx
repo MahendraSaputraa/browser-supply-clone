@@ -8,59 +8,58 @@ import { QUIZ_BACKGROUND_IMAGES } from "@/lib/constants";
 
 export default function QuizCTA() {
   return (
-    <section className="relative min-h-[880px] overflow-hidden border-t border-gray-700/50 bg-black md:min-h-[960px]">
-      <div className="absolute inset-0 grid grid-cols-2 gap-4 md:gap-6">
-        <motion.div
-          animate={{ y: ["-15%", "15%"] }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            repeatType: "mirror",
-            ease: "linear",
-          }}
-          className="flex -rotate-12 scale-125 flex-col gap-4 md:gap-6"
-        >
-          {QUIZ_BACKGROUND_IMAGES.left.map((src, i) => (
-            <div
-              key={src}
-              className="shrink-0 overflow-hidden rounded-lg border border-white/10 shadow-2xl"
-            >
-              <Image
-                src={src}
-                alt=""
-                width={1200}
-                height={800}
-                className="w-full"
-              />
-            </div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          animate={{ y: ["15%", "-15%"] }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            repeatType: "mirror",
-            ease: "linear",
-          }}
-          className="flex -rotate-12 scale-125 flex-col gap-4 md:gap-6"
-        >
-          {QUIZ_BACKGROUND_IMAGES.right.map((src, i) => (
-            <div
-              key={src}
-              className="shrink-0 overflow-hidden rounded-lg border border-white/10 shadow-2xl"
-            >
-              <Image
-                src={src}
-                alt=""
-                width={1200}
-                height={800}
-                className="w-full"
-              />
-            </div>
-          ))}
-        </motion.div>
+    <section className="relative  overflow-hidden border-t border-gray-700/50 bg-black ">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <motion.div
+            animate={{ y: ["10%", "20%"] }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex flex-col rotate-[20deg] scale-110 gap-8 -translate-x-[-100px]"
+          >
+            {QUIZ_BACKGROUND_IMAGES.left.map((src, i) => (
+              <div
+                key={i + src}
+                className="shrink-0 overflow-hidden rounded-lg border border-white/10 shadow-2xl"
+              >
+                <Image
+                  src={src}
+                  alt=""
+                  width={1200}
+                  height={800}
+                  className="w-full"
+                />
+              </div>
+            ))}
+          </motion.div>
+          <motion.div
+            animate={{ y: ["-10%", "-20%"] }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex flex-col rotate-[20deg] scale-110 gap-8 translate-x-[-100px]"
+          >
+            {QUIZ_BACKGROUND_IMAGES.right.map((src, i) => (
+              <div
+                key={i + src}
+                className="shrink-0 overflow-hidden rounded-lg border border-white/10 shadow-2xl"
+              >
+                <Image
+                  src={src}
+                  alt=""
+                  width={1200}
+                  height={800}
+                  className="w-full"
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
 
       {/* overlay */}

@@ -7,6 +7,7 @@ import PoweredByFramer from "@/components/home/PoweredByFramer";
 import Pricing from "@/components/home/Pricing";
 import Process from "@/components/home/Process";
 import QuizCTA from "@/components/home/QuizCTA";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Pricing />
       <QuizCTA />
       <Founder />
+      <Testimonials />
     </>
   );
 }

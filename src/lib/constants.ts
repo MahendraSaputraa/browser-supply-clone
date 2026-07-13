@@ -146,10 +146,102 @@ export const QUIZ_BACKGROUND_IMAGES = {
     "/images/image-mockup-1.avif",
     "/images/image-mockup-2.avif",
     "/images/image-mockup-3.avif",
+    "/images/image-mockup-1.avif",
+    "/images/image-mockup-2.avif",
+    "/images/image-mockup-3.avif",
   ],
   right: [
     "/images/image-mockup-4.avif",
     "/images/image-mockup-5.avif",
     "/images/image-mockup-6.avif",
+    "/images/image-mockup-4.avif",
+    "/images/image-mockup-5.avif",
+    "/images/image-mockup-6.avif",
+  ],
+};
+
+export const TESTIMONIAL_ROWS = {
+  row1: [
+    {
+      quote:
+        "The best part is it's aesthetically pleasing and business focused.",
+      name: "Emon",
+      avatar: "/avatars/emon.jpg",
+      rating: 3,
+    },
+    {
+      quote:
+        "This Framer template is excellent at elevating your online presence!",
+      name: "Nic",
+      avatar: "/avatars/nic.jpg",
+      rating: 5,
+    },
+    {
+      quote:
+        "Beautiful design and is easy to set up! The tutorial helped me a lot.",
+      name: "Widya",
+      avatar: "/avatars/widya.jpg",
+      rating: 5,
+    },
+    {
+      quote: "Super easy to use and customise and also beautifully designed.",
+      name: "Dávid",
+      avatar: "/avatars/david.jpg",
+      rating: 5,
+    },
+  ],
+  row2: [
+    {
+      quote: "Intentional and distinct design makes them fun to look at.",
+      name: "Ian",
+      avatar: "/avatars/ian.jpg",
+      rating: 5,
+    },
+    {
+      quote: "The templates is so well designed and has a unique look to them.",
+      name: "Samar",
+      avatar: "/avatars/samar.jpg",
+      rating: 5,
+    },
+    {
+      quote:
+        "The design is clean, easy to customize, professional, and versatile.",
+      name: "Mark",
+      avatar: "/avatars/mark.jpg",
+      rating: 5,
+    },
+    {
+      quote: "The template is super easy to work with and very beautiful.",
+      name: "Aba",
+      avatar: "/avatars/aba.jpg",
+      rating: 5,
+    },
+  ],
+  row3: [
+    {
+      quote:
+        "Super easy to customize and looked visually stunning at the same time!",
+      name: "Tarun",
+      avatar: "/avatars/tarun.jpg",
+      rating: 5,
+    },
+    {
+      quote: "Brilliant template. Super well designed and easy to customise!",
+      name: "Jacob",
+      avatar: "/avatars/jacob.jpg",
+      rating: 5,
+    },
+    {
+      quote: "An excellent template in terms of design & customizability.",
+      name: "Seyed",
+      avatar: "/avatars/seyed.jpg",
+      rating: 5,
+    },
+    {
+      quote: "Very well-built template. Made with an excellent design.",
+      name: "Roni",
+      avatar: "/avatars/roni.jpg",
+      rating: 5,
+    },
   ],
 };
