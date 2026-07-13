@@ -54,6 +54,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter);
+  scroll-behavior: smooth
 }
 .paragraph{
   @apply tracking-[-0.03rem] text-base leading-6 text-muted-foreground;
