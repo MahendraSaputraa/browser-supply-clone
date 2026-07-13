@@ -3,16 +3,16 @@ import Link from "next/link";
 
 import { FEATURED_TEMPLATES } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
-import BorderedSection from "@/components/layout/BorderedSection";
 import { ArrowRightIcon } from "@/assets/icons";
 import { cn } from "@/lib/utils";
+import { BorderedSection } from "../layout";
 
 export default function FeaturedTemplates() {
   return (
-    <section className="border-b border-gray-700/50">
+    <section className="relative border-b border-gray-700/50 z-20">
       <BorderedSection className="px-0!">
         {/* header */}
-        <div className="flex px-5 md:px-10 flex-col justify-between gap-8 pt-16 pb-10 md:flex-row md:items-end">
+        <div className="flex px-5 z-10 md:px-10 flex-col justify-between gap-8 pt-16 pb-10 md:flex-row md:items-end">
           <div>
             <h2 className="font-gambetta max-w-xl text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-white md:text-[3.5rem]">
               Pre

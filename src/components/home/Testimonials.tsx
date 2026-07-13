@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import BorderedSection from "@/components/layout/BorderedSection";
 import { Button } from "@/components/ui/Button";
 import { TESTIMONIAL_ROWS } from "@/lib/constants";
+import { ArrowRightIcon, StarIcon } from "@/assets/icons";
+import { BorderedSection } from "../layout";
 
 type Testimonial = {
   quote: string;
@@ -16,27 +17,29 @@ type Testimonial = {
 
 function TestimonialCard({ quote, name, avatar, rating }: Testimonial) {
   return (
-    <div className="flex w-[340px] shrink-0 flex-col gap-6 rounded-lg border border-gray-700/50 bg-white/[0.03] p-6 md:w-[380px]">
-      <span className="font-gambetta text-3xl leading-none text-white/20">
-        &rdquo;
+    <div className="flex w-[340px] gap-4 shrink-0 flex-col  bg-white/[0.03] p-6 md:w-[400px]">
+      <span className="font-gambetta text-4xl leading-none leading-0 text-muted-foreground/50">
+        &quot;
       </span>
-      <p className="text-sm leading-6 text-white/90">{quote}</p>
+
+      <p className="text-[1.75rem] font-gambetta leading-10 font-medium text-white">
+        {quote}
+      </p>
       <div className="flex items-center gap-1">
         {Array.from({ length: 5 }).map((_, i) => (
-          <svg
+          <StarIcon
             key={i}
-            viewBox="0 0 20 20"
-            className={`h-4 w-4 ${i < rating ? "fill-white" : "fill-white/20"}`}
-          >
-            <path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 8.5l6.4-.6L10 1z" />
-          </svg>
+            className={`size-8 ${i < rating ? "fill-white" : "fill-white/20"}`}
+          />
         ))}
       </div>
-      <div className="flex items-center gap-3">
-        <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-white/10">
+      <div className="flex items-center mt-2 gap-3">
+        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-md shadow-lg bg-white/10">
           <Image src={avatar} alt={name} fill className="object-cover" />
         </div>
-        <span className="text-sm font-medium text-white">{name}</span>
+        <span className="text-base font-medium text-muted-foreground">
+          {name}
+        </span>
       </div>
     </div>
   );
@@ -51,13 +54,12 @@ function MarqueeRow({
   direction: "left" | "right";
   duration: number;
 }) {
-  // duplikat data supaya loop-nya mulus tanpa jeda
   const looped = [...items, ...items];
 
   return (
     <div className="flex w-full overflow-hidden">
       <motion.div
-        className="flex gap-4 pr-4 md:gap-6 md:pr-6"
+        className="flex divide-x divide-gray-700/50"
         animate={{
           x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
         }}
@@ -78,31 +80,49 @@ function MarqueeRow({
 export default function Testimonials() {
   return (
     <section className="relative overflow-hidden border-t border-gray-700/50 bg-black">
-      <BorderedSection className="!px-0 md:!px-0">
+      {/* gradient background */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-[5%] top-50 w-[85vh] -rotate-140  h-[85vw]  ">
+          <Image
+            src="/images/gradient.avif"
+            alt=""
+            fill
+            priority
+            sizes="100vh"
+            className="select-none object-cover opacity-90 scale-150  blur-3xl"
+          />
+        </div>
+      </div>
+      <BorderedSection className="!px-0 md:!px-0 relative">
         {/* header */}
-        <div className="flex flex-col gap-10 px-5 py-16 md:flex-row md:items-end md:justify-between md:px-10">
+        <div className="flex flex-col gap-10 px-5 pt-20 pb-10 md:flex-row md:items-end md:justify-between md:px-10">
           <div className="max-w-2xl">
-            <h2 className="font-gambetta text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-white md:text-6xl">
-              Tr<em className="font-normal">us</em>ted by 2
+            <h2 className="font-gambetta  text-[3.5rem] font-medium leading-[1.15] tracking-[-0.03em] text-white">
+              Tr<em className="font-normal">u</em>ste
+              <em className="font-normal">d</em> b
+              <em className="font-normal">y</em> 2
               <em className="font-normal">k</em>+ c
-              <em className="font-normal">us</em>tomers
-              <br />
-              ar<em className="font-normal">oun</em>d t
-              <em className="font-normal">he</em> globe
+              <em className="font-normal">u</em>sto
+              <em className="font-normal">m</em>ers a
+              <em className="font-normal">r</em>ou
+              <em className="font-normal">n</em>d t
+              <em className="font-normal">h</em>e{" "}
+              <em className="font-normal">g</em>lobe
             </h2>
-            <p className="mt-6 max-w-md text-sm leading-6 text-muted-foreground">
-              Speed, simplicity, and results. That&apos;s what customers achieve
-              with my Framer website templates.
+            <p className="mt-4 paragraph">
+              Speed, simplicity, and results. That&apos;s what customers <br />{" "}
+              achieve with my Framer website templates.
             </p>
           </div>
 
           <Button href="/customers" variant="primary" className="shrink-0">
             See real customer websites
+            <ArrowRightIcon className="ml-2 size-4" />
           </Button>
         </div>
 
         {/* marquee rows */}
-        <div className="flex flex-col gap-4 border-t border-gray-700/50 py-10 md:gap-6 md:py-16">
+        <div className="flex flex-col  border-t border-gray-700/50 divide-y divide-gray-700/50">
           <MarqueeRow
             items={TESTIMONIAL_ROWS.row1}
             direction="left"

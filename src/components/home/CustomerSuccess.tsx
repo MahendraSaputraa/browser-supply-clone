@@ -1,5 +1,5 @@
-import BorderedSection from "@/components/layout/BorderedSection";
 import { Button } from "@/components/ui/Button";
+import { BorderedSection } from "../layout";
 
 export default function CustomerSuccess() {
   return (
@@ -12,49 +12,50 @@ export default function CustomerSuccess() {
               Customer success
             </span>
 
-            <h2 className="font-gambetta max-w-lg text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-white md:text-5xl">
-              <em className="font-normal">Ma</em>tt la
-              <em className="font-normal">un</em>ched h
-              <em className="font-normal">is</em> new
-              <br />w<em className="font-normal">e</em>bs
-              <em className="font-normal">i</em>te i
-              <em className="font-normal">n</em> j
-              <em className="font-normal">u</em>st 1 ho
-              <em className="font-normal">u</em>r
-            </h2>
+            <div className="flex flex-col gap-3">
+              <h2 className="font-gambetta  text-[3.5rem] font-medium leading-[1.15] tracking-[-0.03em] text-white ">
+                M<em className="font-normal">a</em>tt lau
+                <em className="font-normal">n</em>ched h
+                <em className="font-normal">i</em>s ne
+                <em className="font-normal">w</em> w
+                <em className="font-normal">e</em>bs
+                <em className="font-normal">i</em>te i
+                <em className="font-normal">n</em> j
+                <em className="font-normal">u</em>st 1 ho
+                <em className="font-normal">u</em>r
+              </h2>
+              <p className="paragraph">
+                From burning out on 12-hour gym shifts to running <br /> his own
+                online coaching business, on his own terms.
+              </p>
 
-            <p className="mt-6 max-w-md text-sm leading-6 text-muted-foreground">
-              From burning out on 12-hour gym shifts to running his own online
-              coaching business, on his own terms.
-            </p>
+              <p className="paragraph">
+                Matt had tried the agency route before. Thousands of <br />{" "}
+                dollars later, he had a terrible site and zero control over it.
+              </p>
 
-            <p className="mt-4 max-w-md text-sm leading-6 text-muted-foreground">
-              Matt had tried the agency route before. Thousands of dollars
-              later, he had a terrible site and zero control over it.
-            </p>
-
-            <p className="mt-4 max-w-md text-sm leading-6 text-muted-foreground">
-              I showed him the right template. We sat in a caf&eacute;, he made
-              the edits himself, and launched in 1 hour.
-            </p>
-
-            <blockquote className="mt-6 max-w-sm border-l-2 border-white/30 pl-4 text-sm leading-6 text-white">
-              No design skills. No coding. Barely any laptop experience.
-              Didn&apos;t need any.
-            </blockquote>
+              <p className="paragraph">
+                I showed him the right template. We sat in a caf&eacute;, <br />{" "}
+                he made the edits himself, and launched in 1 hour.
+              </p>
+              <blockquote className=" max-w-sm border-l-2 border-white pl-4 leading-6 tracking-[-0.03rem] text-white">
+                No design skills. No coding. Barely any laptop experience.
+                Didn&apos;t need any.
+              </blockquote>
+            </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Button href="/templates" variant="secondary">
+              <Button href="/templates" variant="primary">
                 View template Matt used
               </Button>
-              <Button href="/customers" variant="tertiary" outline>
+              <Button href="/customers" variant="secondary">
                 View other customers&apos; sites
               </Button>
             </div>
           </div>
 
           {/* right: video, full-bleed */}
-          <div className="relative min-h-[400px] md:min-h-[600px]">
+          <div className="relative min-h-[400px] xl:min-h-[770px]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
@@ -62,7 +63,7 @@ export default function CustomerSuccess() {
               loop
               playsInline
             >
-              <source src="/videos/customer-matt.mp4" type="video/mp4" />
+              <source src="/videos/customer-success-vid.mp4" type="video/mp4" />
             </video>
           </div>
         </div>

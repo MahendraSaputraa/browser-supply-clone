@@ -1,0 +1,10 @@
+export { default as Benefits } from "./Benefits";
+export { default as CustomerSuccess } from "./CustomerSuccess";
+export { default as FeaturedTemplates } from "./FeaturedTemplates";
+export { default as Founder } from "./Founder";
+export { default as Hero } from "./Hero";
+export { default as PoweredByFramer } from "./PoweredByFramer";
+export { default as Pricing } from "./Pricing";
+export { default as Process } from "./Process";
+export { default as QuizCTA } from "./QuizCTA";
+export { default as Testimonials } from "./Testimonials";

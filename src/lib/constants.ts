@@ -85,21 +85,21 @@ export const PROCESS_STEPS = [
   {
     step: 1,
     title: "Select a template",
-    description: "Choose from the range of expert-crafted templates.",
-    video: "/videos/process-step-1.mp4",
+    description: "Choose from the range of\nexpert-crafted templates.",
+    video: "/videos/process-1-vid.mp4",
   },
   {
     step: 2,
     title: "Make it yours",
-    description: "Change text, customize colors, and swap images with ease.",
-    video: "/videos/process-step-2.mp4",
+    description: "Change text, customize colors,\n and swap images with ease.",
+    video: "/videos/process-1-vid.mp4",
   },
   {
     step: 3,
     title: "Go live instantly",
     description:
-      "Launch your site in seconds with just one click. Fast, simple, and code-free.",
-    video: "/videos/process-step-3.mp4",
+      "Launch your site in seconds with just\n one click. Fast, simple, and code-free.",
+    video: "/videos/process-2-vid.mp4",
   },
 ];
 
@@ -146,14 +146,8 @@ export const QUIZ_BACKGROUND_IMAGES = {
     "/images/image-mockup-1.avif",
     "/images/image-mockup-2.avif",
     "/images/image-mockup-3.avif",
-    "/images/image-mockup-1.avif",
-    "/images/image-mockup-2.avif",
-    "/images/image-mockup-3.avif",
   ],
   right: [
-    "/images/image-mockup-4.avif",
-    "/images/image-mockup-5.avif",
-    "/images/image-mockup-6.avif",
     "/images/image-mockup-4.avif",
     "/images/image-mockup-5.avif",
     "/images/image-mockup-6.avif",
@@ -166,27 +160,27 @@ export const TESTIMONIAL_ROWS = {
       quote:
         "The best part is it's aesthetically pleasing and business focused.",
       name: "Emon",
-      avatar: "/avatars/emon.jpg",
+      avatar: "/images/testi-1.avif",
       rating: 3,
     },
     {
       quote:
         "This Framer template is excellent at elevating your online presence!",
       name: "Nic",
-      avatar: "/avatars/nic.jpg",
+      avatar: "/images/testi-2.avif",
       rating: 5,
     },
     {
       quote:
         "Beautiful design and is easy to set up! The tutorial helped me a lot.",
       name: "Widya",
-      avatar: "/avatars/widya.jpg",
+      avatar: "/images/testi-3.avif",
       rating: 5,
     },
     {
       quote: "Super easy to use and customise and also beautifully designed.",
       name: "Dávid",
-      avatar: "/avatars/david.jpg",
+      avatar: "/images/testi-4.avif",
       rating: 5,
     },
   ],
@@ -194,26 +188,26 @@ export const TESTIMONIAL_ROWS = {
     {
       quote: "Intentional and distinct design makes them fun to look at.",
       name: "Ian",
-      avatar: "/avatars/ian.jpg",
+      avatar: "/images/testi-4.avif",
       rating: 5,
     },
     {
       quote: "The templates is so well designed and has a unique look to them.",
       name: "Samar",
-      avatar: "/avatars/samar.jpg",
+      avatar: "/images/testi-3.avif",
       rating: 5,
     },
     {
       quote:
         "The design is clean, easy to customize, professional, and versatile.",
       name: "Mark",
-      avatar: "/avatars/mark.jpg",
+      avatar: "/images/testi-2.avif",
       rating: 5,
     },
     {
       quote: "The template is super easy to work with and very beautiful.",
       name: "Aba",
-      avatar: "/avatars/aba.jpg",
+      avatar: "/images/testi-1.avif",
       rating: 5,
     },
   ],
@@ -222,25 +216,25 @@ export const TESTIMONIAL_ROWS = {
       quote:
         "Super easy to customize and looked visually stunning at the same time!",
       name: "Tarun",
-      avatar: "/avatars/tarun.jpg",
+      avatar: "/images/testi-2.avif",
       rating: 5,
     },
     {
       quote: "Brilliant template. Super well designed and easy to customise!",
       name: "Jacob",
-      avatar: "/avatars/jacob.jpg",
+      avatar: "/images/testi-1.avif",
       rating: 5,
     },
     {
       quote: "An excellent template in terms of design & customizability.",
       name: "Seyed",
-      avatar: "/avatars/seyed.jpg",
+      avatar: "/images/testi-4.avif",
       rating: 5,
     },
     {
       quote: "Very well-built template. Made with an excellent design.",
       name: "Roni",
-      avatar: "/avatars/roni.jpg",
+      avatar: "/images/testi-3.avif",
       rating: 5,
     },
   ],

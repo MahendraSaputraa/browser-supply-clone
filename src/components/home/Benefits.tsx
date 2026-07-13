@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { TrendUpIcon } from "@/assets/icons";
-import BorderedSection from "@/components/layout/BorderedSection";
 import { PAYMENT_ICONS } from "@/lib/constants";
+import { BorderedSection } from "../layout";
 
 export default function Benefits() {
   return (
-    <section className="relative ">
+    <section className="relative z-10">
       <BorderedSection className="!px-0 md:!px-0">
         {/* header */}
         <div className="flex flex-col items-center border-b border-gray-700/50 px-5 pb-10 pt-20 text-center md:px-10">

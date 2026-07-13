@@ -46,16 +46,14 @@
   /* Fonts */
   --font-inter: var(--font-inter);
   --font-gambetta: var(--font-gambetta);
-
- 
 }
 
 body {
-  background: var(--background);
+  background: black;
   color: var(--foreground);
   font-family: var(--font-inter);
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
-.paragraph{
-  @apply tracking-[-0.03rem] text-base leading-6 text-muted-foreground;
+.paragraph {
+  @apply -tracking-wider text-base leading-6 text-muted-foreground;
 }

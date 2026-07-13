@@ -11,7 +11,7 @@ type ButtonProps = {
 };
 
 const baseClasses =
-  "inline-flex h-12 items-center justify-center rounded-[4px] px-5 border text-base font-medium transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+  "inline-flex h-12 items-center justify-center rounded-[4px] px-5 border text-base font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
 
 const variants = {
   primary: {

@@ -1,4 +1,4 @@
-import { Footer, Navbar, PageContainer } from "@/components/layout";
+import { Footer, Navbar } from "@/components/layout";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -63,11 +63,9 @@ export default function RootLayout({
       className={`${inter.variable} ${gambetta.variable} h-full antialiased`}
     >
       <body>
-        <PageContainer>
-          <Navbar />
-          {children}
-          <Footer />
-        </PageContainer>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,8 +1,6 @@
-import Image from "next/image";
-
-import BorderedSection from "@/components/layout/BorderedSection";
 import { Button } from "@/components/ui/Button";
 import { ArrowRightIcon } from "@/assets/icons";
+import { BorderedSection } from "../layout";
 
 export const FOUNDER_STATS = [
   { value: "6+", label: "Years building sites" },
@@ -17,7 +15,7 @@ export default function Founder() {
       <BorderedSection className="!px-0 md:!px-0">
         <div className="grid md:grid-cols-2 md:divide-x md:divide-gray-700/50">
           {/* left: photo/video, full-bleed */}
-          <div className="relative min-h-[400px] md:min-h-[760px]">
+          <div className="relative min-h-[400px] md:min-h-[888px]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
@@ -25,42 +23,43 @@ export default function Founder() {
               loop
               playsInline
             >
-              <source src="/videos/founder-ramish.mp4" type="video/mp4" />
+              <source src="/videos/founder-1-vid.mp4" type="video/mp4" />
             </video>
           </div>
 
           {/* right: content */}
           <div className="flex flex-col">
             {/* bio */}
-            <div className="border-b border-gray-700/50 px-5 py-16 md:px-10">
-              <span className="mb-6 inline-flex w-fit items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[-0.03em] text-muted-foreground">
+            <div className="border-b border-gray-700/50 px-5 pb-9 pt-20 md:px-10 md:pr-0 pr-0">
+              <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[-0.03em] text-muted-foreground">
                 Founder
               </span>
 
-              <h2 className="font-gambetta max-w-md text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-white md:text-5xl">
+              <h2 className="font-gambetta  text-[3.5rem] font-medium leading-[1.15] tracking-[-0.03em] text-white ">
                 Hey, I&apos;m Ramish
                 <br />
                 Designer &amp; Creator
               </h2>
 
-              <div className="mt-6 flex flex-col gap-4">
-                <p className="max-w-md text-sm leading-6 text-muted-foreground">
-                  When I started my business, I realised speed was everything.
+              <div className="mt-3 flex flex-col paragraph gap-3">
+                <p>
+                  When I started my business, I realised speed was everything.{" "}
+                  <br />
                   Getting a website live meant getting customers through the
                   door.
                 </p>
-                <p className="max-w-md text-sm leading-6 text-muted-foreground">
+                <p>
                   Luckily, I knew how to design and build sites, so what could
                   have taken weeks only took me hours.
                 </p>
-                <p className="max-w-md text-sm leading-6 text-muted-foreground">
+                <p>
                   That first week, I had my website live, and sales rolling in.
                 </p>
-                <p className="max-w-md text-sm leading-6 text-muted-foreground">
+                <p>
                   Now, I&apos;m sharing my unfair advantage with other creative
-                  entrepreneurs so they can do the same. Launch faster without
-                  the cost or complexity.
+                  entrepreneurs so they can do the same.
                 </p>
+                <p>Launch faster without the cost or complexity.</p>
               </div>
             </div>
 
@@ -75,12 +74,10 @@ export default function Founder() {
                       : "flex flex-col items-center justify-center gap-2 px-5 py-10 text-center"
                   }
                 >
-                  <span className="font-gambetta text-3xl font-medium text-white md:text-4xl">
+                  <span className="font-gambetta text-3xl font-medium text-white md:text-[2.7rem]">
                     {stat.value}
                   </span>
-                  <span className="text-sm text-muted-foreground">
-                    {stat.label}
-                  </span>
+                  <span className="paragraph">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -88,8 +85,8 @@ export default function Founder() {
 
             <Button
               href="/book-a-call"
-              variant="secondary"
-              className="w-full !rounded-none border-t border-gray-700/50 py-8 !bg-white !text-black hover:!opacity-90"
+              variant="primary"
+              className="rounded-none"
             >
               Book a call with me
               <ArrowRightIcon className="ml-2 size-4" />
