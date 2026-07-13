@@ -6,19 +6,22 @@ export default function Process() {
     <section className="border-t border-gray-700/50">
       <BorderedSection className="!px-0 md:!px-0">
         {/* header */}
-        <div className="flex flex-col items-center border-b border-gray-700/50 px-5 py-20 text-center md:px-10">
+        <div className="flex flex-col items-center border-b border-gray-700/50 px-5 pt-20 pb-10 text-center md:px-10">
           <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[-0.03em] text-muted-foreground">
             Process
           </span>
 
-          <h2 className="font-gambetta max-w-2xl text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-white md:text-6xl">
-            Go <em className="font-normal">live</em> in hours,
-            <br />
-            not <em className="font-normal">months</em>
+          <h2 className="font-gambetta max-w-2xl text-[4.5rem] text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-white ">
+            Go li<em className="font-normal">v</em>e i
+            <em className="font-normal">n</em> ho
+            <em className="font-normal">u</em>rs, <br /> not{" "}
+            <em className="font-normal">m</em>ont
+            <em className="font-normal">h</em>s
           </h2>
 
-          <p className="mt-6 max-w-md text-sm leading-6 text-muted-foreground">
-            Three steps. That&apos;s all it takes to get your website online.
+          <p className="mt-6 paragraph">
+            Three steps. That&apos;s all it takes to get your website online.{" "}
+            <br />
             Pick a template, add your content, and hit publish.
           </p>
         </div>

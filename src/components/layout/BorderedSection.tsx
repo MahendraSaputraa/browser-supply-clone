@@ -10,7 +10,7 @@ export default function BorderedSection({
   border?: string;
 }) {
   return (
-    <div className="px-5 md:px-0">
+    <div className="px-5 md:px-10">
       <div
         className={cn(
           "border-x mx-auto max-w-360 px-5 md:px-10",
