@@ -150,7 +150,7 @@ export default function Benefits() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-            <div className="absolute inset-x-0 pb-0 bottom-0 p-5 md:p-8">
+            <div className="absolute inset-x-0  lg:pb-0 bottom-0 p-5 md:p-8">
               <h3 className="font-gambetta text-2xl font-medium leading-tight text-white md:text-3xl">
                 Step-by-step video <br /> tutorials included
               </h3>
