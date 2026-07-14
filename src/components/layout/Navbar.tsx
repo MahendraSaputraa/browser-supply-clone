@@ -128,6 +128,7 @@ export default function Navbar({ className }: NavbarProps) {
               href="/bundle"
               variant="secondary"
               className="hidden lg:inline-flex"
+              withAnimation
             >
               Bundle
             </Button>
@@ -228,7 +229,12 @@ export default function Navbar({ className }: NavbarProps) {
                     delay: 0.15 + (NAV_LINKS.length + 1) * 0.08,
                   }}
                 >
-                  <Button href="/bundle" variant="primary" className="w-full">
+                  <Button
+                    href="/bundle"
+                    variant="primary"
+                    className="w-full"
+                    withAnimation
+                  >
                     Full-kit
                   </Button>
                 </motion.div>

@@ -97,6 +97,7 @@ export default function Founder() {
               href="/book-a-call"
               variant="primary"
               className="rounded-none"
+              withAnimation
             >
               Book a call with me
               <ArrowRightIcon className="ml-2 size-4" />

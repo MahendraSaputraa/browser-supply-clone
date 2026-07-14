@@ -57,6 +57,7 @@ export default function QuizCTA() {
             href="/quiz"
             variant="primary"
             className="shrink-0 lg:w-fit w-full"
+            withAnimation
           >
             Take the quiz
             <ArrowRightIcon className="ml-2 size-4" />

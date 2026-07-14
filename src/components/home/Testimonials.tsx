@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/Button";
-import { TESTIMONIAL_ROWS } from "@/lib/constants";
+import { useTestimonials } from "@/hooks/use-testimonials";
 import { ArrowRightIcon, StarIcon } from "@/assets/icons";
 import { BorderedSection } from "../layout";
 
@@ -77,7 +77,47 @@ function MarqueeRow({
   );
 }
 
+function TestimonialSkeletonRow() {
+  return (
+    <div className="flex w-full overflow-hidden">
+      <div className="flex divide-x divide-gray-700/50">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <div
+            key={i}
+            className="flex w-[340px] gap-4 shrink-0 flex-col bg-white/[0.03] p-6 md:w-[400px]"
+          >
+            <div className="h-8 w-6 animate-pulse rounded-sm bg-gray-700/30" />
+
+            <div className="space-y-2">
+              <div className="h-6 w-full animate-pulse rounded-sm bg-gray-700/30" />
+              <div className="h-6 w-4/5 animate-pulse rounded-sm bg-gray-700/30" />
+            </div>
+
+            <div className="flex items-center gap-1">
+              {Array.from({ length: 5 }).map((_, j) => (
+                <div
+                  key={j}
+                  className="size-8 animate-pulse rounded-sm bg-gray-700/30"
+                />
+              ))}
+            </div>
+
+            <div className="flex items-center mt-2 gap-3">
+              <div className="h-10 w-10 shrink-0 animate-pulse rounded-md bg-gray-700/30" />
+              <div className="h-4 w-24 animate-pulse rounded-sm bg-gray-700/30" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Testimonials() {
+  const { data, isLoading, isError } = useTestimonials();
+
+  const rows = data ?? { row1: [], row2: [], row3: [] };
+
   return (
     <section className="relative overflow-hidden border-t border-gray-700/50 bg-black">
       {/* gradient background */}
@@ -122,36 +162,49 @@ export default function Testimonials() {
             </p>
           </div>
 
-          <Button href="/customers" variant="primary" className="shrink-0">
+          <Button
+            href="/customers"
+            variant="primary"
+            className="shrink-0"
+            withAnimation
+          >
             See real customer websites
             <ArrowRightIcon className="ml-2 size-4" />
           </Button>
         </motion.div>
 
+        {/* error state */}
+        {isError && (
+          <div className="border-t border-gray-700/50 px-5 py-16 text-center lg:px-10">
+            <p className="paragraph text-muted-foreground">
+              Failed to load testimonials. Please try again later.
+            </p>
+          </div>
+        )}
+
+        {/* loading skeleton */}
+        {isLoading && (
+          <div className="flex flex-col border-t border-gray-700/50 divide-y divide-gray-700/50">
+            <TestimonialSkeletonRow />
+            <TestimonialSkeletonRow />
+            <TestimonialSkeletonRow />
+          </div>
+        )}
+
         {/* marquee rows */}
-        <motion.div
-          initial={{ opacity: 0, y: 45 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="flex flex-col  border-t border-gray-700/50 divide-y divide-gray-700/50"
-        >
-          <MarqueeRow
-            items={TESTIMONIAL_ROWS.row1}
-            direction="left"
-            duration={40}
-          />
-          <MarqueeRow
-            items={TESTIMONIAL_ROWS.row2}
-            direction="right"
-            duration={45}
-          />
-          <MarqueeRow
-            items={TESTIMONIAL_ROWS.row3}
-            direction="left"
-            duration={38}
-          />
-        </motion.div>
+        {!isLoading && !isError && (
+          <motion.div
+            initial={{ opacity: 0, y: 45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="flex flex-col  border-t border-gray-700/50 divide-y divide-gray-700/50"
+          >
+            <MarqueeRow items={rows.row1} direction="left" duration={40} />
+            <MarqueeRow items={rows.row2} direction="right" duration={45} />
+            <MarqueeRow items={rows.row3} direction="left" duration={38} />
+          </motion.div>
+        )}
       </BorderedSection>
     </section>
   );

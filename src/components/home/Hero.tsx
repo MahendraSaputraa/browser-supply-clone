@@ -119,7 +119,7 @@ export default function Hero() {
                   // span
                   index === 1 && "col-span-2 lg:col-span-1",
 
-                  // reset order di desktop
+                  // reset order
                   index === 0 && "lg:order-1",
                   index === 1 && "lg:order-2",
                   index === 2 && "lg:order-3",

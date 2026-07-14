@@ -59,10 +59,12 @@ export default function CustomerSuccess() {
                 href="/templates"
                 className="w-full lg:w-auto"
                 variant="primary"
+                withAnimation
               >
                 View template Matt used
               </Button>
               <Button
+                withAnimation
                 href="/customers"
                 className="w-full lg:w-auto"
                 variant="secondary"

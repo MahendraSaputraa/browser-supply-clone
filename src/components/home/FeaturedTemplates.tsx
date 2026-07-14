@@ -2,13 +2,15 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 
-import { FEATURED_TEMPLATES } from "@/lib/constants";
+import { useTemplates } from "@/hooks/use-templates";
 import { Button } from "@/components/ui/Button";
 import { ArrowRightIcon } from "@/assets/icons";
 import { cn } from "@/lib/utils";
 import { BorderedSection } from "../layout";
 
 export default function FeaturedTemplates() {
+  const { data, isLoading, isError } = useTemplates();
+
   const gridContainer: Variants = {
     hidden: {},
     show: { transition: { staggerChildren: 0.12 } },
@@ -28,6 +30,8 @@ export default function FeaturedTemplates() {
       },
     },
   };
+
+  const templates = data?.slice(0, 3) ?? [];
 
   return (
     <section className="relative border-b border-gray-700/50 z-20">
@@ -61,70 +65,103 @@ export default function FeaturedTemplates() {
             href="/templates"
             className="shrink-0 w-full lg:w-fit"
             variant="primary"
+            withAnimation
           >
             View all
             <ArrowRightIcon className="ml-2 size-4" />
           </Button>
         </motion.div>
 
-        {/* grid */}
-        <motion.div
-          variants={gridContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid divide-y lg:divide-y-0 divide-gray-700/50 lg:gap-y-12 border-t border-gray-700/50 lg:grid-cols-3"
-        >
-          {FEATURED_TEMPLATES.map((template, i) => (
-            <div
-              key={template.slug}
-              style={{ perspective: 450 }}
-              className="cursor-pointer"
-            >
-              <motion.div
-                variants={cardVariant}
-                style={{
-                  transformOrigin: "center",
-                  transformStyle: "preserve-3d",
-                }}
+        {/* error state */}
+        {isError && (
+          <div className="border-t border-gray-700/50 px-5 py-16 text-center lg:px-10">
+            <p className="paragraph text-muted-foreground">
+              Failed to load templates. Please try again later.
+            </p>
+          </div>
+        )}
+
+        {/* loading skeleton */}
+        {isLoading && (
+          <div className="grid divide-y lg:divide-y-0 divide-gray-700/50 border-t border-gray-700/50 lg:grid-cols-3">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <div
+                key={i}
                 className={cn(
-                  "group block p-5 lg:p-10",
-                  "hover:bg-border/50 transition-colors",
-                  i == 1 && "lg:border-r lg:border-l lg:border-gray-700/50",
+                  "p-5 lg:p-10",
+                  i === 1 && "lg:border-r lg:border-l lg:border-gray-700/50",
                 )}
               >
-                <div className="rounded-sm transition-[transform,box-shadow] duration-500 ease-out will-change-transform group-hover:-translate-y-3 group-hover:shadow-2xl group-hover:shadow-black/30 transition-all">
-                  <div className="overflow-hidden rounded-sm border border-gray-700/50">
-                    <Image
-                      src={template.image}
-                      alt={template.name}
-                      width={480}
-                      height={300}
-                      className="w-full transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                    />
-                  </div>
-                </div>
+                <div className="aspect-[480/300] w-full animate-pulse rounded-sm border border-gray-700/50 bg-gray-700/30" />
 
-                <div className="mt-5 flex items-center gap-2">
-                  <h3 className="font-gambetta text-[1.75rem] tracking-[-0.03rem] text-white">
-                    {template.name}
-                  </h3>
-                  {template.isNew && (
-                    <span className="rounded-sm bg-emerald-500/15 px-2 py-1.5 text-xs font-semibold uppercase text-emerald-500">
-                      New
-                    </span>
+                <div className="mt-5 h-7 w-2/3 animate-pulse rounded-sm bg-gray-700/30" />
+
+                <div className="mt-3 h-3 w-1/3 animate-pulse rounded-sm bg-gray-700/30" />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* grid */}
+        {!isLoading && !isError && (
+          <motion.div
+            variants={gridContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid divide-y lg:divide-y-0 divide-gray-700/50 lg:gap-y-12 border-t border-gray-700/50 lg:grid-cols-3"
+          >
+            {templates.map((template, i) => (
+              <div
+                key={template.slug}
+                style={{ perspective: 450 }}
+                className="cursor-pointer"
+              >
+                <motion.div
+                  variants={cardVariant}
+                  style={{
+                    transformOrigin: "center",
+                    transformStyle: "preserve-3d",
+                  }}
+                  className={cn(
+                    "group block p-5 lg:p-10",
+                    "hover:bg-border/50 transition-colors",
+                    i == 1 && "lg:border-r lg:border-l lg:border-gray-700/50",
                   )}
-                </div>
+                >
+                  <div className="rounded-sm transition-[transform,box-shadow] duration-500 ease-out will-change-transform group-hover:-translate-y-3 group-hover:shadow-2xl group-hover:shadow-black/30 transition-all">
+                    <div className="overflow-hidden rounded-sm border border-gray-700/50">
+                      <Image
+                        src={template.image}
+                        alt={template.name}
+                        width={480}
+                        height={300}
+                        className="w-full transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                      />
+                    </div>
+                  </div>
 
-                <div className="mt-2 flex items-center gap-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  <span>{template.category}</span>
-                  <span className="size-1 rounded-full bg-muted-foreground" />
-                  <span>{template.price}</span>
-                </div>
-              </motion.div>
-            </div>
-          ))}
-        </motion.div>
+                  <div className="mt-5 flex items-center gap-2">
+                    <h3 className="font-gambetta text-[1.75rem] tracking-[-0.03rem] text-white">
+                      {template.name}
+                    </h3>
+                    {template.isNew && (
+                      <span className="rounded-sm bg-emerald-500/15 px-2 py-1.5 text-xs font-semibold uppercase text-emerald-500">
+                        New
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="mt-2 flex items-center gap-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    <span>{template.category}</span>
+                    <span className="size-1 rounded-full bg-muted-foreground" />
+                    <span>{template.price}</span>
+                  </div>
+                </motion.div>
+              </div>
+            ))}
+          </motion.div>
+        )}
       </BorderedSection>
     </section>
   );

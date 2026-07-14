@@ -54,6 +54,7 @@ export default function PoweredByFramer() {
                 href="/templates"
                 className="w-full lg:w-auto"
                 variant="primary"
+                withAnimation
               >
                 Browse templates
               </Button>
@@ -61,6 +62,7 @@ export default function PoweredByFramer() {
                 href="https://framer.com"
                 className="w-full lg:w-auto"
                 variant="secondary"
+                withAnimation
               >
                 Explore Framer
               </Button>

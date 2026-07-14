@@ -1,5 +1,5 @@
 "use client";
-import { useLenis } from "@/hooks/useLenis";
+import { useLenis } from "@/hooks/use-lenis";
 
 export default function SmoothScrollProvider({
   children,
