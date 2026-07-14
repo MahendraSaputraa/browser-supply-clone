@@ -7,7 +7,7 @@ import { ArrowRightIcon } from "@/assets/icons";
 
 export default function QuizCTA() {
   return (
-    <section className="relative overflow-hidden border-t border-gray-700/50 bg-black">
+    <section className="relative overflow-hidden border-t border-zinc-600/50 bg-black">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

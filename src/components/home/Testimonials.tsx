@@ -119,7 +119,7 @@ export default function Testimonials() {
   const rows = data ?? { row1: [], row2: [], row3: [] };
 
   return (
-    <section className="relative overflow-hidden border-t border-gray-700/50 bg-black">
+    <section className="relative overflow-hidden border-t border-zinc-600/50 bg-black">
       {/* gradient background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-50%] sm:left-[-40%] md:left-[-30%] lg:left-[-10%] xl:left-[5%] top-[80px] sm:top-[100px] md:top-[120px] lg:top-50 w-[150vw] sm:w-[120vw] md:w-[85vh] lg:w-[85vh] -rotate-140 h-[150vw] sm:h-[120vw] md:h-[85vw] lg:h-[85vw]">
@@ -175,7 +175,7 @@ export default function Testimonials() {
 
         {/* error state */}
         {isError && (
-          <div className="border-t border-gray-700/50 px-5 py-16 text-center lg:px-10">
+          <div className="border-t border-zinc-600/50 px-5 py-16 text-center lg:px-10">
             <p className="paragraph text-muted-foreground">
               Failed to load testimonials. Please try again later.
             </p>
@@ -184,7 +184,7 @@ export default function Testimonials() {
 
         {/* loading skeleton */}
         {isLoading && (
-          <div className="flex flex-col border-t border-gray-700/50 divide-y divide-gray-700/50">
+          <div className="flex flex-col border-t border-zinc-600/50 divide-y divide-gray-700/50">
             <TestimonialSkeletonRow />
             <TestimonialSkeletonRow />
             <TestimonialSkeletonRow />
@@ -198,7 +198,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="flex flex-col  border-t border-gray-700/50 divide-y divide-gray-700/50"
+            className="flex flex-col  border-t border-zinc-600/50 divide-y divide-gray-700/50"
           >
             <MarqueeRow items={rows.row1} direction="left" duration={40} />
             <MarqueeRow items={rows.row2} direction="right" duration={45} />

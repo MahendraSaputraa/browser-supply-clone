@@ -77,7 +77,7 @@ export default function Hero() {
       {/* vid section */}
       <div className="border-t border-gray-300">
         <BorderedSection
-          border="border-gray-700/50"
+          border="border-zinc-600/50"
           className="py-5 md:py-10 grid relative"
         >
           <div
@@ -92,7 +92,7 @@ export default function Hero() {
                 opacity,
                 transformOrigin: "center",
               }}
-              className="rounded-lg border-2 border-gray-700/50 shadow-2xl shadow-black/70 overflow-hidden"
+              className="rounded-lg border-2 border-zinc-600/50 shadow-2xl shadow-black/70 overflow-hidden"
             >
               <LazyVideo src="/videos/hero-vid.mp4" eager />
             </motion.div>
@@ -101,8 +101,8 @@ export default function Hero() {
       </div>
 
       {/* stats section */}
-      <div className="border-y border-gray-700/50">
-        <BorderedSection border="border-gray-700/50" className="px-0!">
+      <div className="border-y border-zinc-600/50">
+        <BorderedSection border="border-zinc-600/50" className="px-0!">
           <div className="grid grid-cols-2 lg:grid-cols-3">
             {stats.map((item, index) => (
               <motion.div
@@ -124,10 +124,10 @@ export default function Hero() {
                   index === 1 && "lg:order-2",
                   index === 2 && "lg:order-3",
                   index === 1 &&
-                    "col-span-2 lg:col-span-1 border-gray-700/50 border-t lg:border-t-0",
-                  index == 0 && " border-gray-700/50 border-r lg:border-r-0",
+                    "col-span-2 lg:col-span-1 border-zinc-600/50 border-t lg:border-t-0",
+                  index == 0 && " border-zinc-600/50 border-r lg:border-r-0",
                   index > 0
-                    ? " border-gray-700/50 lg:border-l lg:border-t-0"
+                    ? " border-zinc-600/50 lg:border-l lg:border-t-0"
                     : "",
                 ].join(" ")}
                 initial={{ opacity: 0, y: 45 }}

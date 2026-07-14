@@ -34,7 +34,7 @@ export default function FeaturedTemplates() {
   const templates = data?.slice(0, 3) ?? [];
 
   return (
-    <section className="relative border-b border-gray-700/50 z-20">
+    <section className="relative border-b border-zinc-600/50 z-20">
       <BorderedSection className="px-0!">
         {/* header */}
         <motion.div
@@ -74,7 +74,7 @@ export default function FeaturedTemplates() {
 
         {/* error state */}
         {isError && (
-          <div className="border-t border-gray-700/50 px-5 py-16 text-center lg:px-10">
+          <div className="border-t border-zinc-600/50 px-5 py-16 text-center lg:px-10">
             <p className="paragraph text-muted-foreground">
               Failed to load templates. Please try again later.
             </p>
@@ -83,16 +83,16 @@ export default function FeaturedTemplates() {
 
         {/* loading skeleton */}
         {isLoading && (
-          <div className="grid divide-y lg:divide-y-0 divide-gray-700/50 border-t border-gray-700/50 lg:grid-cols-3">
+          <div className="grid divide-y lg:divide-y-0 divide-gray-700/50 border-t border-zinc-600/50 lg:grid-cols-3">
             {Array.from({ length: 3 }).map((_, i) => (
               <div
                 key={i}
                 className={cn(
                   "p-5 lg:p-10",
-                  i === 1 && "lg:border-r lg:border-l lg:border-gray-700/50",
+                  i === 1 && "lg:border-r lg:border-l lg:border-zinc-600/50",
                 )}
               >
-                <div className="aspect-[480/300] w-full animate-pulse rounded-sm border border-gray-700/50 bg-gray-700/30" />
+                <div className="aspect-[480/300] w-full animate-pulse rounded-sm border border-zinc-600/50 bg-gray-700/30" />
 
                 <div className="mt-5 h-7 w-2/3 animate-pulse rounded-sm bg-gray-700/30" />
 
@@ -109,7 +109,7 @@ export default function FeaturedTemplates() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid divide-y lg:divide-y-0 divide-gray-700/50 lg:gap-y-12 border-t border-gray-700/50 lg:grid-cols-3"
+            className="grid divide-y lg:divide-y-0 divide-gray-700/50 lg:gap-y-12 border-t border-zinc-600/50 lg:grid-cols-3"
           >
             {templates.map((template, i) => (
               <div
@@ -126,11 +126,11 @@ export default function FeaturedTemplates() {
                   className={cn(
                     "group block p-5 lg:p-10",
                     "hover:bg-border/50 transition-colors",
-                    i == 1 && "lg:border-r lg:border-l lg:border-gray-700/50",
+                    i == 1 && "lg:border-r lg:border-l lg:border-zinc-600/50",
                   )}
                 >
                   <div className="rounded-sm transition-[transform,box-shadow] duration-500 ease-out will-change-transform group-hover:-translate-y-3 group-hover:shadow-2xl group-hover:shadow-black/30 transition-all">
-                    <div className="overflow-hidden rounded-sm border border-gray-700/50">
+                    <div className="overflow-hidden rounded-sm border border-zinc-600/50">
                       <Image
                         src={template.image}
                         alt={template.name}

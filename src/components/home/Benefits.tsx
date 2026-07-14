@@ -17,7 +17,7 @@ export default function Benefits() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center"
+          className="section-header-spacing flex flex-col items-center border-b border-zinc-600/50 text-center"
         >
           <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[-0.03em] text-muted-foreground">
             Benefits
@@ -55,7 +55,7 @@ export default function Benefits() {
               </p>
             </div>
 
-            <div className="border-t border-gray-700/50">
+            <div className="border-t border-zinc-600/50">
               <LazyVideo
                 src="/videos/benefits-1-vid.mp4"
                 className="h-full max-h-[240px] object-cover w-full"
@@ -102,7 +102,7 @@ export default function Benefits() {
                 })}
               </div>
 
-              <div className="p-5 pt-0 border-b border-gray-700/50">
+              <div className="p-5 pt-0 border-b border-zinc-600/50">
                 <div className="flex items-center gap-1.5 text-xs  font-semibold uppercase text-muted-foreground -tracking-wide">
                   <TrendUpIcon className="size-7 text-emerald-500" />
                   Convert more

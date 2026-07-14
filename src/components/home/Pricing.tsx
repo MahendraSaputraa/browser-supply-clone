@@ -14,7 +14,7 @@ export default function Pricing() {
   const plans = data ?? [];
 
   return (
-    <section className="border-t overflow-hidden border-gray-700/50">
+    <section className="border-t overflow-hidden border-zinc-600/50">
       <BorderedSection className="!px-0 md:!px-0">
         {/* header */}
         <motion.div
@@ -22,7 +22,7 @@ export default function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center"
+          className="section-header-spacing flex flex-col items-center border-b border-zinc-600/50 text-center"
         >
           <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[-0.03em] text-muted-foreground">
             Pricing

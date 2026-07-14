@@ -63,7 +63,7 @@ export default function QuizModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 w-full max-w-[1000px] overflow-hidden rounded-xl border border-gray-700/50 bg-background"
+            className="relative z-10 w-full max-w-[1000px] overflow-hidden rounded-xl border border-zinc-600/50 bg-background"
           >
             {/* moving background */}
             <div className="absolute inset-0">

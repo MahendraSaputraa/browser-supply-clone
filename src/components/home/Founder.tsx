@@ -14,7 +14,7 @@ export const FOUNDER_STATS = [
 
 export default function Founder() {
   return (
-    <section className="border-t border-gray-700/50">
+    <section className="border-t border-zinc-600/50">
       <BorderedSection className="px-0!">
         <div className="grid lg:grid-cols-2 lg:divide-x lg:divide-gray-700/50">
           {/* left: photo/video, full-bleed */}
@@ -40,7 +40,7 @@ export default function Founder() {
             className="flex flex-col"
           >
             {/* bio */}
-            <div className="section-header-spacing border-b border-gray-700/50 pb-9 pr-0 lg:pr-0">
+            <div className="section-header-spacing border-b border-zinc-600/50 pb-9 pr-0 lg:pr-0">
               <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[-0.03em] text-muted-foreground">
                 Founder
               </span>
@@ -80,7 +80,7 @@ export default function Founder() {
                   key={stat.label}
                   className={
                     i >= 2
-                      ? "flex flex-col items-center justify-center gap-2 border-t border-gray-700/50 px-5 py-10 text-center"
+                      ? "flex flex-col items-center justify-center gap-2 border-t border-zinc-600/50 px-5 py-10 text-center"
                       : "flex flex-col items-center justify-center gap-2 px-5 py-10 text-center"
                   }
                 >

@@ -8,7 +8,7 @@ import BorderedSection from "./BorderedSection";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-700/50">
+    <footer className="border-t border-zinc-600/50">
       <BorderedSection className="!px-0">
         {/* main */}
         <motion.div
@@ -73,7 +73,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="flex lg:px-10 px-5 flex-col items-center justify-between gap-4 border-t border-gray-700/50 py-5 paragraph lg:flex-row"
+          className="flex lg:px-10 px-5 flex-col items-center justify-between gap-4 border-t border-zinc-600/50 py-5 paragraph lg:flex-row"
         >
           <p>
             © {new Date().getFullYear()} browser.supply.{" "}

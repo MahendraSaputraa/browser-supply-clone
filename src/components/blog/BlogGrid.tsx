@@ -73,10 +73,10 @@ export default function BlogGrid() {
   const posts = data ?? [];
 
   return (
-    <section className="border-b relative border-gray-700/50">
+    <section className="border-b relative border-zinc-600/50">
       <BorderedSection className="!px-0">
         <div className="mx-auto max-w-100 lg:max-w-360 ">
-          <div className="overflow-hidden border border-gray-700/50">
+          <div className="overflow-hidden border border-zinc-600/50">
             {isError && (
               <div className="px-5 py-16 text-center lg:px-10">
                 <p className="paragraph text-muted-foreground">
@@ -89,7 +89,7 @@ export default function BlogGrid() {
               <div className="grid lg:divide-y-0 divide-y divide-gray-700/50 grid-cols-1 lg:grid-cols-2 gap-0">
                 {Array.from({ length: 4 }).map((_, index) => {
                   const cardClasses = [
-                    "border-gray-700/50 ",
+                    "border-zinc-600/50 ",
                     index % 2 === 0 ? "lg:border-r" : "",
                     index < 2 ? "lg:border-b" : "",
                   ]
@@ -109,7 +109,7 @@ export default function BlogGrid() {
               <div className="grid lg:divide-y-0 divide-y divide-gray-700/50  grid-cols-1 lg:grid-cols-2 gap-0">
                 {posts.map((post, index) => {
                   const cardClasses = [
-                    "border-gray-700/50 ",
+                    "border-zinc-600/50 ",
                     index % 2 === 0 ? "lg:border-r" : "",
                     index < 2 ? "lg:border-b" : "",
                   ]

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 export default function BorderedSection({
   children,
   className,
-  border = "border-gray-700/50",
+  border = "border-zinc-600/50",
 }: {
   children: React.ReactNode;
   className?: string;

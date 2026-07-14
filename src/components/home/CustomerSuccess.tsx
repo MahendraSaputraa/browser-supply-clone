@@ -7,7 +7,7 @@ import LazyVideo from "../ui/LazyVideo";
 
 export default function CustomerSuccess() {
   return (
-    <section className="border-t border-gray-700/50">
+    <section className="border-t border-zinc-600/50">
       <BorderedSection className="!px-0 md:!px-0">
         <motion.div
           initial={{ opacity: 0, y: 45 }}

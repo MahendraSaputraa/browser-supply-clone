@@ -2,7 +2,7 @@ import { BorderedSection } from "@/components/layout";
 
 export default function BlogHero() {
   return (
-    <section className="relative border-b border-gray-700/50">
+    <section className="relative border-b border-zinc-600/50">
       <BorderedSection border="border-gray-900/50" className="relative">
         <div className="mx-auto max-w-100 lg:max-w-360 px-5 md:px-10 pt-20 pb-10 lg:pt-40 lg:pb-20">
           <div className="relative z-10 flex flex-col items-center text-center ">

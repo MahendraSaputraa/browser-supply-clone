@@ -6,7 +6,7 @@ import LazyVideo from "../ui/LazyVideo";
 
 export default function PoweredByFramer() {
   return (
-    <section className="border-t border-gray-700/50">
+    <section className="border-t border-zinc-600/50">
       <BorderedSection className="!px-0 md:!px-0">
         <div className="grid lg:grid-cols-2 md:divide-x md:divide-gray-700/50">
           {/* left: video */}
@@ -23,7 +23,7 @@ export default function PoweredByFramer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="order-1 lg:border-0 border-b border-gray-700/50 lg:order-2 flex flex-col justify-center px-5 pt-10 lg:pt-15 xl:pt-20 lg:px-10 pb-10 lg:py-0"
+            className="order-1 lg:border-0 border-b border-zinc-600/50 lg:order-2 flex flex-col justify-center px-5 pt-10 lg:pt-15 xl:pt-20 lg:px-10 pb-10 lg:py-0"
           >
             <span className="mb-6 inline-flex w-fit items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[-0.03em] text-muted-foreground">
               Framer
