@@ -8,10 +8,11 @@ type ButtonProps = {
   type?: "button" | "submit" | "reset";
   variant?: "primary" | "secondary" | "tertiary";
   outline?: boolean;
+  withAnimation?: boolean;
 };
 
 const baseClasses =
-  "inline-flex h-12 items-center justify-center rounded-[4px] px-5 border text-base font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+  "group inline-flex h-12 items-center justify-center rounded-[4px] px-5 border text-base font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
 
 const variants = {
   primary: {
@@ -70,6 +71,17 @@ const variants = {
   },
 };
 
+function AnimatedLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="relative inline-flex h-6 overflow-hidden">
+      <span className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:-translate-y-6">
+        <span className="flex h-6 items-center justify-center">{children}</span>
+
+        <span className="flex h-6 items-center justify-center">{children}</span>
+      </span>
+    </span>
+  );
+}
 export function Button({
   children,
   className,
@@ -77,6 +89,7 @@ export function Button({
   type = "button",
   variant = "primary",
   outline = false,
+  withAnimation = false,
 }: ButtonProps) {
   const classes = cn(
     baseClasses,
@@ -84,17 +97,23 @@ export function Button({
     className,
   );
 
+  const content = withAnimation ? (
+    <AnimatedLabel>{children}</AnimatedLabel>
+  ) : (
+    children
+  );
+
   if (href) {
     return (
       <Link href={href} className={classes}>
-        {children}
+        {content}
       </Link>
     );
   }
 
   return (
     <button type={type} className={classes}>
-      {children}
+      {content}
     </button>
   );
 }

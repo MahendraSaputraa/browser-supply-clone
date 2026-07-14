@@ -76,7 +76,11 @@ export default function FeaturedTemplates() {
           className="grid divide-y lg:divide-y-0 divide-gray-700/50 lg:gap-y-12 border-t border-gray-700/50 lg:grid-cols-3"
         >
           {FEATURED_TEMPLATES.map((template, i) => (
-            <div key={template.slug} style={{ perspective: 450 }}>
+            <div
+              key={template.slug}
+              style={{ perspective: 450 }}
+              className="cursor-pointer"
+            >
               <motion.div
                 variants={cardVariant}
                 style={{
@@ -89,7 +93,7 @@ export default function FeaturedTemplates() {
                   i == 1 && "lg:border-r lg:border-l lg:border-gray-700/50",
                 )}
               >
-                <div className="rounded-sm transition-[transform,box-shadow] duration-500 ease-out will-change-transform group-hover:-translate-y-3 group-hover:shadow-2xl group-hover:shadow-black/30">
+                <div className="rounded-sm transition-[transform,box-shadow] duration-500 ease-out will-change-transform group-hover:-translate-y-3 group-hover:shadow-2xl group-hover:shadow-black/30 transition-all">
                   <div className="overflow-hidden rounded-sm border border-gray-700/50">
                     <Image
                       src={template.image}

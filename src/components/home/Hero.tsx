@@ -49,8 +49,8 @@ export default function Hero() {
               <FramerIcon className="w-5 h-5 " /> Framer templates
             </div>
 
-            <h1 className="font-gambetta lg:text-[80px] text-[56px] xl:text-[100px] font-medium leading-[0.93] tracking-[-0.03em] text-white">
-              Webs<em className="font-normal">i</em>te te
+            <h1 className="section-hero-heading">
+              Webs<em className="font-medium">i</em>te te
               <em className="font-normal">m</em>pla
               <em className="font-normal">t</em>es
               <br />d<em className="font-normal">e</em>si
@@ -61,12 +61,13 @@ export default function Hero() {
               <em className="font-normal">r</em>t
             </h1>
 
-            <p className="mt-8 max-w-xl text-sm font-normal leading-7 text-muted-foreground md:text-base">
+            <p className="mt-5 section-hero-paragraph">
               Launch your online business today using an easy-to-customize
-              Framer website template without writing a single line of code.
+              Framer <br /> website template without writing a single line of
+              code.
             </p>
 
-            <Button href="/templates" className="mt-8">
+            <Button href="/templates" className="mt-8" withAnimation>
               Browse templates
             </Button>
           </div>
