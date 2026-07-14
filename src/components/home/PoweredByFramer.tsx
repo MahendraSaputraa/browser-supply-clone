@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { BorderedSection } from "../layout";
 
@@ -20,7 +22,13 @@ export default function PoweredByFramer() {
           </div>
 
           {/* right: content */}
-          <div className="order-1 lg:border-0 border-b border-gray-700/50 lg:order-2 flex flex-col justify-center px-5 pt-10 lg:pt-15 xl:pt-20 lg:px-10 pb-10 lg:py-0">
+          <motion.div
+            initial={{ opacity: 0, y: 45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            className="order-1 lg:border-0 border-b border-gray-700/50 lg:order-2 flex flex-col justify-center px-5 pt-10 lg:pt-15 xl:pt-20 lg:px-10 pb-10 lg:py-0"
+          >
             <span className="mb-6 inline-flex w-fit items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[-0.03em] text-muted-foreground">
               Framer
             </span>
@@ -61,7 +69,7 @@ export default function PoweredByFramer() {
                 Explore Framer
               </Button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </BorderedSection>
     </section>

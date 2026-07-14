@@ -19,9 +19,18 @@ export default function Navbar({ className }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className={cn("fixed z-99 w-full", className)}>
+    <header
+      className={cn("fixed z-99 w-full", className)}
+      style={{
+        transform: "translateZ(0)",
+        willChange: "transform",
+      }}
+    >
       {/* progressive blur  */}
-      <div className="pointer-events-none absolute inset-0 -z-10 h-[160%]">
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 h-[160%]"
+        style={{ contain: "strict" }}
+      >
         <div
           className="absolute inset-0 backdrop-blur-[20px]"
           style={{

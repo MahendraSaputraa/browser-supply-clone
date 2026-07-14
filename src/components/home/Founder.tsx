@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ArrowRightIcon } from "@/assets/icons";
 import { BorderedSection } from "../layout";
@@ -15,7 +17,13 @@ export default function Founder() {
       <BorderedSection className="px-0!">
         <div className="grid lg:grid-cols-2 lg:divide-x lg:divide-gray-700/50">
           {/* left: photo/video, full-bleed */}
-          <div className="relative min-h-[298px] lg:min-h-[888px]">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            className="relative min-h-[298px] lg:min-h-[888px]"
+          >
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
@@ -25,10 +33,16 @@ export default function Founder() {
             >
               <source src="/videos/founder-1-vid.mp4" type="video/mp4" />
             </video>
-          </div>
+          </motion.div>
 
           {/* right: content */}
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, y: 45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            className="flex flex-col"
+          >
             {/* bio */}
             <div className="section-header-spacing border-b border-gray-700/50 pb-9 pr-0 lg:pr-0">
               <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[-0.03em] text-muted-foreground">
@@ -91,7 +105,7 @@ export default function Founder() {
               Book a call with me
               <ArrowRightIcon className="ml-2 size-4" />
             </Button>
-          </div>
+          </motion.div>
         </div>
       </BorderedSection>
     </section>

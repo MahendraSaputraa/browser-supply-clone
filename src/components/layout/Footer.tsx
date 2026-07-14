@@ -11,7 +11,13 @@ export default function Footer() {
     <footer className="border-t border-gray-700/50">
       <BorderedSection className="!px-0">
         {/* main */}
-        <div className="lg:px-10 px-5 flex flex-col justify-between py-10 lg:flex-row gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="lg:px-10 px-5 flex flex-col justify-between py-10 lg:flex-row gap-8"
+        >
           {/* left: brand */}
           <div className="lg:text-start text-center">
             <span className="font-gambetta text-[1.75rem] font-medium text-white">
@@ -59,10 +65,16 @@ export default function Footer() {
               </ul>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* bottom bar */}
-        <div className="flex lg:px-10 px-5 flex-col items-center justify-between gap-4 border-t border-gray-700/50 py-5 paragraph lg:flex-row">
+        <motion.div
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="flex lg:px-10 px-5 flex-col items-center justify-between gap-4 border-t border-gray-700/50 py-5 paragraph lg:flex-row"
+        >
           <p>
             © {new Date().getFullYear()} browser.supply.{" "}
             <span className=" text-white">Framer</span> website templates
@@ -90,7 +102,7 @@ export default function Footer() {
             </motion.div>
             <span className=" text-white">Ramish Aziz</span>
           </div>
-        </div>
+        </motion.div>
       </BorderedSection>
     </footer>
   );

@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
+import SmoothScrollProvider from "@/providers/SmoothScrollProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -63,9 +64,11 @@ export default function RootLayout({
       className={`${inter.variable} ${gambetta.variable} h-full antialiased`}
     >
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <SmoothScrollProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

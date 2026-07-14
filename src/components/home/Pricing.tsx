@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/Button";
@@ -9,7 +11,13 @@ export default function Pricing() {
     <section className="border-t overflow-hidden border-gray-700/50">
       <BorderedSection className="!px-0 md:!px-0">
         {/* header */}
-        <div className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center"
+        >
           <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[-0.03em] text-muted-foreground">
             Pricing
           </span>
@@ -28,12 +36,16 @@ export default function Pricing() {
             Perfect for agencies and freelancers looking to <br /> deliver
             high-quality results at lightning speed.
           </p>
-        </div>
+        </motion.div>
 
         {/* plans */}
         <div className="relative grid overflow-hidden lg:grid-cols-2 lg:divide-x lg:divide-gray-700/50">
           {PRICING_PLANS.map((plan) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 45 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1 }}
               key={plan.name}
               className="relative overflow-hidden flex flex-col  p-5 "
             >
@@ -104,7 +116,7 @@ export default function Pricing() {
                   {plan.ctaLabel}
                 </Button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </BorderedSection>

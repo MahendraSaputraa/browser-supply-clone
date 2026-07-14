@@ -1,7 +1,10 @@
+"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { FramerIcon } from "@/assets/icons";
 import { BorderedSection } from "../layout";
+import { useRef } from "react";
 
 const stats = [
   { value: "6+", label: "Years building sites" },
@@ -10,6 +13,17 @@ const stats = [
 ];
 
 export default function Hero() {
+  const videoWrapRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: videoWrapRef,
+    offset: ["start end", "center center"],
+  });
+
+  const rotateX = useTransform(scrollYProgress, [0, 1], [10, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.92, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+
   return (
     <section className="relative">
       {/* gradient background */}
@@ -64,26 +78,41 @@ export default function Hero() {
           border="border-gray-700/50"
           className="py-5 md:py-10 grid relative"
         >
-          <div className="mx-auto rounded-[4px] border-2 border-gray-900/50 shadow-2xl shadow-black/70">
-            <video
-              className="block w-full"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/images/gradient.avif"
+          <div
+            ref={videoWrapRef}
+            style={{ perspective: "1500px" }}
+            className="mx-auto w-full"
+          >
+            <motion.div
+              style={{
+                rotateX,
+                scale,
+                opacity,
+                transformOrigin: "center",
+              }}
+              className="rounded-lg border-2 border-gray-700/50 shadow-2xl shadow-black/70 overflow-hidden"
             >
-              <source src="/videos/hero-vid.mp4" type="video/mp4" />
-            </video>
+              <video
+                className="block w-full"
+                autoPlay
+                muted
+                loop
+                playsInline
+                // poster="/images/gradient.avif"
+              >
+                <source src="/videos/hero-vid.mp4" type="video/mp4" />
+              </video>
+            </motion.div>
           </div>
         </BorderedSection>
       </div>
+
       {/* stats section */}
       <div className="border-y border-gray-700/50">
         <BorderedSection border="border-gray-700/50" className="px-0!">
           <div className="grid grid-cols-2 lg:grid-cols-3">
             {stats.map((item, index) => (
-              <div
+              <motion.div
                 key={item.label}
                 className={[
                   "flex min-h-32 flex-col items-center justify-center py-10 text-center",
@@ -108,6 +137,10 @@ export default function Hero() {
                     ? " border-gray-700/50 lg:border-l lg:border-t-0"
                     : "",
                 ].join(" ")}
+                initial={{ opacity: 0, y: 45 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1 }}
               >
                 <div className="font-gambetta text-4xl font-medium leading-none text-white lg:text-[44px]">
                   {item.value}
@@ -115,7 +148,7 @@ export default function Hero() {
                 <div className="mt-4 text-base font-normal text-muted-foreground tracking-[-0.04em]">
                   {item.label}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </BorderedSection>

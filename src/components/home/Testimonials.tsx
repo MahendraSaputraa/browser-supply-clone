@@ -96,7 +96,13 @@ export default function Testimonials() {
 
       <BorderedSection className="px-0! relative">
         {/* header */}
-        <div className="section-header-spacing flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+        <motion.div
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="section-header-spacing flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between"
+        >
           <div className="max-w-2xl">
             <h2 className="section-heading-2 font-medium leading-[1.15]">
               Tr<em className="font-normal">u</em>ste
@@ -120,10 +126,16 @@ export default function Testimonials() {
             See real customer websites
             <ArrowRightIcon className="ml-2 size-4" />
           </Button>
-        </div>
+        </motion.div>
 
         {/* marquee rows */}
-        <div className="flex flex-col  border-t border-gray-700/50 divide-y divide-gray-700/50">
+        <motion.div
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="flex flex-col  border-t border-gray-700/50 divide-y divide-gray-700/50"
+        >
           <MarqueeRow
             items={TESTIMONIAL_ROWS.row1}
             direction="left"
@@ -139,7 +151,7 @@ export default function Testimonials() {
             direction="left"
             duration={38}
           />
-        </div>
+        </motion.div>
       </BorderedSection>
     </section>
   );

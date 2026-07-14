@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 import { Button } from "@/components/ui/Button";
 import { BorderedSection } from "../layout";
 
@@ -5,7 +8,13 @@ export default function CustomerSuccess() {
   return (
     <section className="border-t border-gray-700/50">
       <BorderedSection className="!px-0 md:!px-0">
-        <div className="grid lg:grid-cols-2 lg:divide-x lg:divide-gray-700/50">
+        <motion.div
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="grid lg:grid-cols-2 lg:divide-x lg:divide-gray-700/50"
+        >
           {/* left: content */}
           <div className="flex flex-col justify-center section-header-spacing">
             <span className="mb-6 inline-flex w-fit items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[-0.03em] text-muted-foreground">
@@ -63,7 +72,13 @@ export default function CustomerSuccess() {
           </div>
 
           {/* right: video, full-bleed */}
-          <div className="relative min-h-[298px] xl:min-h-[770px]">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            className="relative min-h-[298px] xl:min-h-[770px]"
+          >
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
@@ -73,8 +88,8 @@ export default function CustomerSuccess() {
             >
               <source src="/videos/customer-success-vid.mp4" type="video/mp4" />
             </video>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </BorderedSection>
     </section>
   );

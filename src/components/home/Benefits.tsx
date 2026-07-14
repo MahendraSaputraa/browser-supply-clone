@@ -11,7 +11,13 @@ export default function Benefits() {
     <section className="relative z-10">
       <BorderedSection className="!px-0 md:!px-0">
         {/* header */}
-        <div className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center"
+        >
           <span className="mb-6 inline-flex items-center rounded-sm bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[-0.03em] text-muted-foreground">
             Benefits
           </span>
@@ -27,11 +33,17 @@ export default function Benefits() {
             Go live with a website that&apos;s premium just like your business.
             No code, no budget, just a few hours.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid divide-y divide-gray-700/50 grid-cols-1 lg:grid-cols-3 md:divide-x md:divide-y-0">
           {/* left*/}
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, y: 45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            className="flex flex-col"
+          >
             <div className="p-5 pb-9">
               <h3 className="font-gambetta text-[1.75rem] tracking-[-0.03rem] font-medium leading-tight text-white">
                 No coding or design <br /> experience required
@@ -54,10 +66,16 @@ export default function Benefits() {
                 <source src="/videos/benefits-1-vid.mp4" type="video/mp4" />
               </video>
             </div>
-          </div>
+          </motion.div>
 
           {/* middle: payments / convert more / pricing */}
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, y: 45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            className="flex flex-col"
+          >
             <div className="flex flex-col gap-9">
               <div className="flex items-center gap-4 p-5 pb-0">
                 {PAYMENT_ICONS.map((item, index) => {
@@ -120,10 +138,16 @@ export default function Benefits() {
                 Framer template
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* right: video tutorials */}
-          <div className="relative h-full max-h-[430px] overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            className="relative h-full max-h-[430px] overflow-hidden"
+          >
             <video
               className="h-full w-full object-cover"
               autoPlay
@@ -145,7 +169,7 @@ export default function Benefits() {
                 customization to launch.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </BorderedSection>
     </section>
