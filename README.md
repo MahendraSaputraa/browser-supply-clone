@@ -159,9 +159,3 @@ Untuk kasus homepage marketing yang relatif statis, **headless CMS** lebih efisi
 - Menggunakan **SVG** untuk ikon dan ilustrasi vector agar ringan dan tajam di semua resolusi (didukung oleh `@svgr/webpack` di project ini).
 - Memberi `priority` hanya pada gambar above-the-fold (misal hero image) agar loading gambar lain tidak menghambat First Contentful Paint.
 - Menghindari layout shift dengan selalu mendefinisikan `width`/`height` (atau `fill` dengan container yang sudah punya aspect-ratio) pada setiap gambar.
-
----
-
-## 📄 Lisensi
-
-Project ini dibuat khusus untuk keperluan **Trial Test Front End Programmer** — Mind Interactive Media, 2026.
