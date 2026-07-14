@@ -120,7 +120,7 @@ export default function QuizModal() {
               <Button
                 href="/quiz"
                 variant="primary"
-                className="mt-auto w-fit"
+                className="mt-auto w-full lg:w-fit"
                 withAnimation
               >
                 Take the quiz

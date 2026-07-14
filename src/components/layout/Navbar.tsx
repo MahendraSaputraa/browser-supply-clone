@@ -19,17 +19,14 @@ export default function Navbar({ className }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header
-      className={cn("fixed z-99 w-full", className)}
-      style={{
-        transform: "translateZ(0)",
-        willChange: "transform",
-      }}
-    >
-      {/* progressive blur  */}
+    <header className={cn("fixed z-[99] w-full", className)}>
       <div
         className="pointer-events-none absolute inset-0 -z-10 h-[160%]"
-        style={{ contain: "strict" }}
+        style={{
+          contain: "strict",
+          transform: "translateZ(0)",
+          willChange: "transform",
+        }}
       >
         <div
           className="absolute inset-0 backdrop-blur-[20px]"
@@ -69,7 +66,9 @@ export default function Navbar({ className }: NavbarProps) {
         />
       </div>
 
-      <div className="relative z-50 px-5 md:px-10">
+      {/* z-[102]: harus lebih tinggi dari overlay (z-[101]) supaya logo
+          & tombol toggle (X/menu) tetap terlihat & bisa diklik saat menu mobile terbuka */}
+      <div className="relative z-[102] px-5 md:px-10">
         <div
           className={cn(
             "mx-auto tracking-[-0.03em] py-5 relative max-w-100 lg:max-w-360 px-5 md:px-10",
@@ -153,7 +152,7 @@ export default function Navbar({ className }: NavbarProps) {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 z-40 lg:hidden backdrop-blur-[10px] bg-black/40"
+              className="fixed inset-0 z-[101] lg:hidden backdrop-blur-[10px] bg-black/40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -162,7 +161,7 @@ export default function Navbar({ className }: NavbarProps) {
             />
 
             <motion.div
-              className="pointer-events-none fixed inset-0 z-40 overflow-hidden lg:hidden"
+              className="pointer-events-none fixed inset-0 z-[101] overflow-hidden lg:hidden"
               initial={{ clipPath: "inset(0% 0% 100% 0%)" }}
               animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
               exit={{ clipPath: "inset(0% 0% 100% 0%)" }}
