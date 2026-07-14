@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { FramerIcon } from "@/assets/icons";
 import { BorderedSection } from "../layout";
 import { useRef } from "react";
+import LazyVideo from "../ui/LazyVideo";
 
 const stats = [
   { value: "6+", label: "Years building sites" },
@@ -92,16 +93,7 @@ export default function Hero() {
               }}
               className="rounded-lg border-2 border-gray-700/50 shadow-2xl shadow-black/70 overflow-hidden"
             >
-              <video
-                className="block w-full"
-                autoPlay
-                muted
-                loop
-                playsInline
-                // poster="/images/gradient.avif"
-              >
-                <source src="/videos/hero-vid.mp4" type="video/mp4" />
-              </video>
+              <LazyVideo src="/videos/hero-vid.mp4" eager />
             </motion.div>
           </div>
         </BorderedSection>
@@ -139,7 +131,7 @@ export default function Hero() {
                 ].join(" ")}
                 initial={{ opacity: 0, y: 45 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1 }}
               >
                 <div className="font-gambetta text-4xl font-medium leading-none text-white lg:text-[44px]">

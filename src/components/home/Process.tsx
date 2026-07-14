@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { PROCESS_STEPS, QUIZ_BACKGROUND_IMAGES } from "@/lib/constants";
 import { BorderedSection } from "../layout";
 import MarqueeBackground from "../shared/MarqueeBackground";
+import LazyVideo from "../ui/LazyVideo";
 
 export default function Process() {
   return (
@@ -13,7 +14,7 @@ export default function Process() {
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center"
         >
@@ -47,25 +48,20 @@ export default function Process() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1, ease: "easeOut" }}
                 >
-                  <video
+                  <LazyVideo
+                    src={step.video}
                     className="absolute inset-0 h-full w-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  >
-                    <source src={step.video} type="video/mp4" />
-                  </video>
+                  />
                 </motion.div>
               )}
               {index == 0 && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1, ease: "easeOut" }}
                 >
                   <MarqueeBackground
@@ -83,7 +79,7 @@ export default function Process() {
               <motion.div
                 initial={{ opacity: 0, y: 45 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1 }}
                 className="absolute inset-x-0 top-0 p-5 "
               >

@@ -11,7 +11,7 @@ export default function QuizCTA() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
         <MarqueeBackground
@@ -30,7 +30,7 @@ export default function QuizCTA() {
       <motion.div
         initial={{ opacity: 0, y: 45 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         transition={{ duration: 1 }}
         className="relative z-10 flex min-h-[814px] flex-col justify-end px-5 xl:py-20 lg:py-15 py-10 lg:min-h-[890px] lg:px-10"
       >

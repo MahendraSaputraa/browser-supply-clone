@@ -99,7 +99,7 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           className="section-header-spacing flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between"
         >
@@ -132,7 +132,7 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           className="flex flex-col  border-t border-gray-700/50 divide-y divide-gray-700/50"
         >

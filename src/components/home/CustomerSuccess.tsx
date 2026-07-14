@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/Button";
 import { BorderedSection } from "../layout";
+import LazyVideo from "../ui/LazyVideo";
 
 export default function CustomerSuccess() {
   return (
@@ -11,7 +12,7 @@ export default function CustomerSuccess() {
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           className="grid lg:grid-cols-2 lg:divide-x lg:divide-gray-700/50"
         >
@@ -75,19 +76,14 @@ export default function CustomerSuccess() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="relative min-h-[298px] xl:min-h-[770px]"
           >
-            <video
+            <LazyVideo
+              src="/videos/customer-success-vid.mp4"
               className="absolute inset-0 h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src="/videos/customer-success-vid.mp4" type="video/mp4" />
-            </video>
+            />
           </motion.div>
         </motion.div>
       </BorderedSection>

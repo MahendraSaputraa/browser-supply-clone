@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { BorderedSection } from "../layout";
+import LazyVideo from "../ui/LazyVideo";
 
 export default function PoweredByFramer() {
   return (
@@ -10,22 +11,17 @@ export default function PoweredByFramer() {
         <div className="grid lg:grid-cols-2 md:divide-x md:divide-gray-700/50">
           {/* left: video */}
           <div className="order-2 lg:order-1 h-[306px] xl:h-[770px]">
-            <video
+            <LazyVideo
+              src="/videos/framer-vid-1.mp4"
               className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src="/videos/framer-vid-1.mp4" type="video/mp4" />
-            </video>
+            />
           </div>
 
           {/* right: content */}
           <motion.div
             initial={{ opacity: 0, y: 45 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="order-1 lg:border-0 border-b border-gray-700/50 lg:order-2 flex flex-col justify-center px-5 pt-10 lg:pt-15 xl:pt-20 lg:px-10 pb-10 lg:py-0"
           >

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { TrendUpIcon } from "@/assets/icons";
 import { PAYMENT_ICONS } from "@/lib/constants";
 import { BorderedSection } from "../layout";
+import LazyVideo from "../ui/LazyVideo";
 
 export default function Benefits() {
   return (
@@ -14,7 +15,7 @@ export default function Benefits() {
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center"
         >
@@ -40,7 +41,7 @@ export default function Benefits() {
           <motion.div
             initial={{ opacity: 0, y: 45 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="flex flex-col"
           >
@@ -55,16 +56,10 @@ export default function Benefits() {
             </div>
 
             <div className="border-t border-gray-700/50">
-              <video
+              <LazyVideo
+                src="/videos/benefits-1-vid.mp4"
                 className="h-full max-h-[240px] object-cover w-full"
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster=""
-              >
-                <source src="/videos/benefits-1-vid.mp4" type="video/mp4" />
-              </video>
+              />
             </div>
           </motion.div>
 
@@ -72,7 +67,7 @@ export default function Benefits() {
           <motion.div
             initial={{ opacity: 0, y: 45 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="flex flex-col"
           >
@@ -144,20 +139,15 @@ export default function Benefits() {
           <motion.div
             initial={{ opacity: 0, y: 45 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="relative h-full max-h-[430px] overflow-hidden"
           >
-            <video
+            <LazyVideo
+              src="/videos/benefits-2-vid.mp4"
               className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster=""
-            >
-              <source src="/videos/benefits-2-vid.mp4" type="video/mp4" />
-            </video>
+            />
+
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
             <div className="absolute inset-x-0 pb-0 bottom-0 p-5 md:p-8">

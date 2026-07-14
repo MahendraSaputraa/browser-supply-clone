@@ -36,7 +36,7 @@ export default function FeaturedTemplates() {
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           className="section-header-spacing z-10 flex flex-col justify-between gap-8 lg:flex-row md:items-end"
         >
@@ -72,7 +72,7 @@ export default function FeaturedTemplates() {
           variants={gridContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           className="grid divide-y lg:divide-y-0 divide-gray-700/50 lg:gap-y-12 border-t border-gray-700/50 lg:grid-cols-3"
         >
           {FEATURED_TEMPLATES.map((template, i) => (

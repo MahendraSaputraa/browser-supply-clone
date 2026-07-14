@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ArrowRightIcon } from "@/assets/icons";
 import { BorderedSection } from "../layout";
+import LazyVideo from "../ui/LazyVideo";
 
 export const FOUNDER_STATS = [
   { value: "6+", label: "Years building sites" },
@@ -20,26 +21,21 @@ export default function Founder() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="relative min-h-[298px] lg:min-h-[888px]"
           >
-            <video
+            <LazyVideo
+              src="/videos/founder-1-vid.mp4"
               className="absolute inset-0 h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src="/videos/founder-1-vid.mp4" type="video/mp4" />
-            </video>
+            />
           </motion.div>
 
           {/* right: content */}
           <motion.div
             initial={{ opacity: 0, y: 45 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="flex flex-col"
           >

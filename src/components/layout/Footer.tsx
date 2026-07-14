@@ -14,7 +14,7 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           className="lg:px-10 px-5 flex flex-col justify-between py-10 lg:flex-row gap-8"
         >
@@ -71,7 +71,7 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           className="flex lg:px-10 px-5 flex-col items-center justify-between gap-4 border-t border-gray-700/50 py-5 paragraph lg:flex-row"
         >

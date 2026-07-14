@@ -14,7 +14,7 @@ export default function Pricing() {
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           className="section-header-spacing flex flex-col items-center border-b border-gray-700/50 text-center"
         >
@@ -44,7 +44,7 @@ export default function Pricing() {
             <motion.div
               initial={{ opacity: 0, y: 45 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 1 }}
               key={plan.name}
               className="relative overflow-hidden flex flex-col  p-5 "
